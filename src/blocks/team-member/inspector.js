@@ -10,6 +10,7 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
+	PanelRow,
 	SelectControl,
 	CardDivider,
 	TextControl,
@@ -17,6 +18,7 @@ import {
 	ToggleControl,
 	TextareaControl,
 	GradientPicker,
+	Panel,
 } from '@wordpress/components';
 const { Fragment, useState, useEffect } = wp.element;
 const { useDispatch } = wp.data;
@@ -251,8 +253,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 												setAttributes({ style: size })
 											}
 										/>
+										<PanelRow>
+											<label className="components-truncate components-text components-input-control__label">Image</label>
+										</PanelRow>
 										<MediaUploadCheck>
 											<MediaUpload
+											label={__('Upload Image', 'bwdtm-team-member')}
 												onSelect={(media) =>setAttributes({
 													myImageUrl: media.url,
 													MyImgId: media.id,
@@ -266,6 +272,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												render={({
 													open,
 												}) => (
+													<div className="bwdssb-service-showcase-container">
 													<div className="service-image-control">
 														{myImageUrl ? (
 															<div className="service-image-preview-container">
@@ -321,6 +328,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 															</Button>
 														)}
 													</div>
+													</div>
 												)}
 											/>
 										</MediaUploadCheck>
@@ -368,6 +376,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 																render={({
 																	open,
 																}) => (
+																	
 																	<div className="service-image-control">
 																		{item.imageUrl ? (
 																			<div className="service-image-preview-container">
