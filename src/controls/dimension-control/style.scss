@@ -1,0 +1,80 @@
+.service-dimension-control-wrap {
+    .service-res-rangle-control {
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 10px;
+       .components-input-control__backdrop {
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+        }
+    }
+    .components-range-control__wrapper {
+            display: none;
+    }
+    .components-base-control {
+        margin-left: 0!important;
+    }
+    
+    .service-dimension-label {
+        font-weight: 500;
+    }
+    .service-dimension-control {
+        display: flex;
+        justify-content: space-between;
+        .bwd-res-controls {
+            width: 80%;
+            .bwd-single-rangle {
+                display: flex;
+                .components-input-control__backdrop {
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    -ms-border-radius: 0;
+                    -o-border-radius: 0;
+                }
+                .components-base-control__field {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    text-align: center;
+                    .components-input-control__container {
+                        width: calc(53px);
+                    }
+                }
+            }
+            .components-base-control {
+                width: 27%;
+            }
+        }
+        .service-dimension-link {
+            .components-button {
+                height: 32px;
+                padding: 6px 9px;
+                border-color: #00BCD4 !important;
+                &.is-primary {
+                    background: #3f4631;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                &.is-primary:hover {
+                    background: #3f4631;
+                }
+                &.is-primary:focus {
+                    box-shadow: none;
+                }
+                &.is-secondary:focus {
+                    border: 1px solid;
+                }
+                span {
+                    height: 16px;
+                    font-size: 16px;
+                }
+            }
+
+        }
+    }
+}
+
+

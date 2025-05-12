@@ -1,0 +1,83 @@
+.service-icon-picker {
+	position: relative;
+	margin-bottom: 10px;
+	.service-label {
+		font-weight: 500;
+	}
+	.service-icon-header {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		background: #fff;
+		border: 1px solid #ccc;
+		padding: 0;
+		position: relative;
+		height: 36px;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+		.service-selected-icon {
+			line-height: 1;
+			padding: 10px;
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+		.service-open-icon {
+			background: #007cba;
+			color: #fff;
+			cursor: pointer;
+			height: 100%;
+			display: flex;
+			position: absolute;
+			right: 0;
+			align-items: center;
+			padding: 5px;
+		}
+	}
+}
+
+.service-icons-container {
+	padding: 10px;
+	box-sizing: border-box;
+	height: 220px;
+	.icon-search {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.icon-list {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 5px;
+		.icon {
+			padding: 0;
+			height: 40px;
+			width: 40px;
+			font-size: 16px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #0000;
+			border: 1px solid #ddd;
+			cursor: pointer;
+			&.active-icon {
+				border-color: #4c93ba !important;
+				svg {
+					fill: #4c93ba;
+				}
+			}
+		}
+	}
+	.icon-search input {
+		width: 100%;
+		border: 1px solid #ccc;
+	}
+}
+.icon-home:before {
+	content: "\e900";
+  }

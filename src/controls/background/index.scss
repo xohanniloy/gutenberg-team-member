@@ -1,0 +1,44 @@
+.service-wrapperbg {
+    position: relative;
+	border: 2px dashed #ccc;
+    padding: 5px 0;
+    &:hover .remove-media {
+        opacity: 1;
+        visibility: visible;
+    }
+    button {
+        height: 180px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .service-wrapimg {
+        width: 100%;
+    }
+    .remove-media {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        height: auto;
+        background: #d5d5d5;
+        color: #E91E63;
+        padding: 5px;
+        border-radius: 10%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    .service-bgwrap-placeholder {
+        flex-direction: column;
+        gap: 7px;
+        span {
+            font-weight: 600;
+        }
+    }
+}

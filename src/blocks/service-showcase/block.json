@@ -1,0 +1,24 @@
+{
+	"apiVersion": 2,
+	"name": "bwdssb/service-showcase",
+	"version": "1.0.0",
+	"title": "Service Showcase",
+	"category": "bwdssb-service-showcase-blocks",
+	"description": "Service showcase block",
+	"example": [
+		{
+			"attributes": {
+				"style": "style-1"
+			}
+		}
+	],
+	"supports": {
+		"html": true,
+		"anchor": true,
+		"customClassName": false
+	},
+	"textdomain": "bwdssb-service-showcase",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

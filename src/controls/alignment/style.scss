@@ -1,0 +1,25 @@
+
+.service-Alignment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    .service-label {
+        margin: 0;
+        font-weight: 500;
+    }
+    .service-single-icon {
+        background: #0000;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        &.active {
+            background: #abf5ff;
+        }
+        span {
+            font-size: 17px;
+            height: 17px;
+        }
+    }
+}
+

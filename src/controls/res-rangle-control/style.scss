@@ -1,0 +1,127 @@
+.service-res-rangle-control {
+	.service-resicon-unit-wrap {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+	.bwd-res-controls {
+		.bwd-single-rangle {
+			display: flex;
+			justify-content: space-between;
+			gap: 8px;
+			.reset-icon {
+				height: 30px;
+				border: none;
+				border-radius: 50%;
+				color: #00000099;
+				background: #dcf7f8;
+				font-weight: 300;
+				cursor: pointer;
+			}
+		}
+		.components-range-control {
+			width: 100%;
+			.components-range-control__wrapper {
+				width: 100%!important;
+			}
+			.components-range-control__number {
+				.components-base-control__field {
+					.components-input-base {
+						align-items: center;
+						.components-input-control__container {
+							flex: unset!important;
+						}
+					}
+		
+				}
+	
+			}
+		}
+	}
+	.bwd-res-btn {
+		display: flex;
+		gap: 5px;
+		align-items: center;
+		justify-content: flex-start;
+		.components-button {
+			justify-content: center;
+			min-width: 36px;
+			padding: 0px;
+			height: 16px;
+			min-width: 1px;
+			width: 20px;
+			background: #fff;
+			color: #9b9a9a;
+			border: 1px solid #ddd;
+			box-shadow: none;
+			span {
+				font-size: 11px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
+				margin: 0;
+			}
+			&:hover {
+				background: #0000;
+				color: #000;
+			}
+			&.is-primary {
+				color: #000;
+				background: #00e2ff54;;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				-ms-border-radius: 50%;
+				-o-border-radius: 50%;
+				&:focus:not(:disabled) {
+					box-shadow: none;
+				}
+				&:active:not(:disabled) {
+					background-color: #ddd;
+					color: #000;
+					border: none;
+				}
+			}
+			&.is-secondary {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				-ms-border-radius: 50%;
+				-o-border-radius: 50%;
+				&:hover:not(:disabled) {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+	.units-wrapper {
+		.components-button {
+			padding-bottom: 2px;
+			font-size: 11px;
+			height: 15px;
+			padding: 0 3px 2px;
+			&.is-secondary {
+				box-shadow: none;
+				&:hover:not(:disabled) {
+					box-shadow: none;
+				}
+			}
+			&.is-primary {
+				background: #0000;
+				color: #000;
+				&:hover:not(:disabled) {
+					background: #fff;
+					color: #000;
+				}
+				&:focus:not(:disabled) {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
