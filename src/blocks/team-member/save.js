@@ -1,32 +1,46 @@
 /**
  * WordPress dependencies
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 // import icons from '../../options/icons';
 // import { Fragment } from 'react/jsx-runtime';
 import { Fragment } from '@wordpress/element';
 
-export default function save({attributes}) {
-	const {style} = attributes;
+export default function save({ attributes }) {
+	const { style, myImageUrl, title, titleTag, designation, description } = attributes;
 	return (
 		<Fragment>
-			<div {...useBlockProps.save({
-				className: `${style}`,
-			})}>
+			<div
+				{...useBlockProps.save({
+					className: `${style}`,
+				})}
+			>
 				<div className="team-member-1">
 					<img
 						className="member-image-1"
-						src="https://fastly.picsum.photos/id/3/5000/3333.jpg?hmac=GDjZ2uNWE3V59PkdDaOzTOuV3tPWWxJSf4fNcxu4S2g"
-						alt="Team Member"
+						src={
+							myImageUrl ||
+							'https://fastly.picsum.photos/id/3/5000/3333.jpg?hmac=GDjZ2uNWE3V59PkdDaOzTOuV3tPWWxJSf4fNcxu4S2g'
+						}
+						// src="https://fastly.picsum.photos/id/3/5000/3333.jpg?hmac=GDjZ2uNWE3V59PkdDaOzTOuV3tPWWxJSf4fNcxu4S2g"
+						alt="Team Member Image"
 					/>
 					<div className="member-info-1">
-						<h3 className="member-name-1">Alex Johnson</h3>
-						<p className="member-role-1">Product Designer</p>
-						<p className="member-bio-1">
-							Alex brings over 8 years of experience in creating
-							intuitive user interfaces and seamless product
-							experiences.
-						</p>
+						<RichText.Content
+							tagName={titleTag}
+							value={title}
+							className="member-name-1"
+						/>
+						<RichText.Content
+							tagName="p"
+							value={designation}
+							className="member-role-1"
+						/>
+						<RichText.Content
+							tagName="p"
+							value={description}
+							className="member-bio-1"
+						/>
 						<div className="social-links-1">
 							<a
 								href="https://bestwpdeveloper.com/"

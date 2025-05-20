@@ -63,22 +63,9 @@ const attributes = {
 	MyImgalt: {
 		type: 'string',
 	},
-	items: {
-		type: 'array',
-		default: [
-			{
-				title: 'Service Title',
-				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum.',
-				chooseMedia: 'icon',
-				icon: 'gear',
-				imageUrl: null,
-				svgContent: '',
-				lottieUrl: 'https://lottie.host/embed/f53a8d50-a3b9-4bc7-a663-d1691d635923/uYxWHxmCR1.json',
-				boxLink: '#',
-				showLink: false,
-				newTab: false
-			}
-		],
+	title: {
+		type: 'string',
+		default: 'Team Member',
 	},
 	currentMedia: {
 		type: 'string', 
@@ -91,6 +78,18 @@ const attributes = {
 	titleTag: {
 		type: 'string',
 		default: 'h2',
+	},
+	designation: {
+		type: 'string',
+		default: 'Product Designer',
+	},
+	description: {
+		type: 'string',
+		default: 'Alex brings over 8 years of experience in creating intuitive user interfaces and seamless product experiences.',
+	},
+	icons: {
+		type: 'array',
+		default: [],
 	},
 	titleColor: {
 		type: 'string',

@@ -2,6 +2,7 @@
 /**
  * WordPress dependencies
  */
+
 import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
@@ -19,6 +20,8 @@ import {
 	TextareaControl,
 	GradientPicker,
 	Panel,
+	BaseControl,
+	ColorPicker,
 } from '@wordpress/components';
 const { Fragment, useState, useEffect } = wp.element;
 const { useDispatch } = wp.data;
@@ -45,6 +48,7 @@ const {
 	BoxShadowControl,
 	Alignment,
 	ResDimensionControl,
+	IconPicker,
 } = Controls;
 const {
 	ICON_SIZE,
@@ -125,18 +129,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 		wrapperGradientBg,
 		myImageUrl,
 		MyImgId,
-		MyImgalt
+		MyImgalt,
+		title,
+		designation,
+		description,
+		icons,
 	} = attributes;
 	const objAttrs = { attributes, setAttributes, objAttributes };
 
-	const updateItemText = (index, field, newText) => {
-		const newItems = [...items];
-		newItems[index][field] = newText;
-		setAttributes({ items: newItems });
-		if (field === 'chooseMedia') {
-			setAttributes({ currentMedia: newText });
-		}
-	};
 	const updateItem = (index, field, value) => {
 		const newItems = [...items];
 		newItems[index][field] = value;
@@ -235,336 +235,262 @@ const Inspector = ({ attributes, setAttributes }) => {
 							icon: 'edit',
 							components: (
 								<Fragment>
-									<PanelBody
-										title={__(
-											'Layout Style',
-											'widtm-team-member'
-										)}
-										initialOpen={true}
-									>
-										<SelectControl
-											label={__(
-												'Select Layout Style',
+									<div className="bwdssb-team-container">
+										<PanelBody
+											title={__(
+												'Layout Style',
 												'widtm-team-member'
 											)}
-											value={style}
-											options={SelectStyle}
-											onChange={(size) =>
-												setAttributes({ style: size })
-											}
-										/>
-										<PanelRow>
-											<label className="components-truncate components-text components-input-control__label">Image</label>
-										</PanelRow>
-										<MediaUploadCheck>
-											<MediaUpload
-											label={__('Upload Image', 'bwdtm-team-member')}
-												onSelect={(media) =>setAttributes({
-													myImageUrl: media.url,
-													MyImgId: media.id,
-													MyImgalt: media.alt || "image",
-												})
+											initialOpen={true}
+										>
+											<SelectControl
+												label={__(
+													'Select Layout Style',
+													'widtm-team-member'
+												)}
+												value={style}
+												options={SelectStyle}
+												onChange={(size) =>
+													setAttributes({
+														style: size,
+													})
 												}
-												allowedTypes={[
-													'image',
-												]}
-												value={MyImgId}
-												render={({
-													open,
-												}) => (
-													<div className="bwdssb-service-showcase-container">
-													<div className="service-image-control">
-														{myImageUrl ? (
-															<div className="service-image-preview-container">
-																<Button
-																	className="service-image-preview-wrapper"
-																	onClick={
-																		open
-																	}
-																>
-																	<img
-																		src={
-																			myImageUrl
+											/>
+											<PanelRow>
+												<label className="components-truncate components-text components-input-control__label">
+													Image
+												</label>
+											</PanelRow>
+											<MediaUploadCheck>
+												<MediaUpload
+													label={__(
+														'Upload Image',
+														'wiztm-team-member'
+													)}
+													onSelect={(media) =>
+														setAttributes({
+															myImageUrl:
+																media.url,
+															MyImgId: media.id,
+															MyImgalt:
+																media.alt ||
+																'image',
+														})
+													}
+													allowedTypes={['image']}
+													value={MyImgId}
+													render={({ open }) => (
+														<div className="wiztm-team-member-container">
+															<div className="service-image-control">
+																{myImageUrl ? (
+																	<div className="service-image-preview-container">
+																		<Button
+																			className="service-image-preview-wrapper"
+																			onClick={
+																				open
+																			}
+																		>
+																			<img
+																				src={
+																					myImageUrl
+																				}
+																				alt={
+																					MyImgalt
+																				}
+																				className="service-image-preview"
+																			/>
+																			<span className="service-edit-icon">
+																				<i className="dashicons dashicons-edit"></i>
+																			</span>
+																		</Button>
+																		<Button
+																			className="service-close-icon"
+																			onClick={() =>
+																				setAttributes(
+																					{
+																						myImageUrl:
+																							'',
+																						MyImgId:
+																							'',
+																						MyImgalt:
+																							'',
+																					}
+																				)
+																			}
+																		>
+																			<i className="dashicons dashicons-dismiss"></i>
+																		</Button>
+																	</div>
+																) : (
+																	<Button
+																		className="service-placeholder-image"
+																		onClick={
+																			open
 																		}
-																		alt={MyImgalt}
-																		className="service-image-preview"
-																	/>
-																	<span className="service-edit-icon">
-																		<i className="dashicons dashicons-edit"></i>
-																	</span>
-																</Button>
-																<Button
-																	className="service-close-icon"
-																	onClick={() =>
-																		setAttributes({
-																			myImageUrl: '',
-																			MyImgId: '',
-																			MyImgalt: '',
-																		})
-																	}
-																>
-																	<i className="dashicons dashicons-dismiss"></i>
-																</Button>
+																	>
+																		<img
+																			src={
+																				placeholderImageUrl
+																			}
+																			alt="Placeholder"
+																		/>
+																		<span>
+																			{__(
+																				'Click to Upload Image',
+																				'widtm-team-member'
+																			)}
+																		</span>
+																	</Button>
+																)}
 															</div>
-														) : (
-															<Button
-																className="service-placeholder-image"
-																onClick={
-																	open
-																}
-															>
-																<img
-																	src={
-																		placeholderImageUrl
-																	}
-																	alt="Placeholder"
-																/>
-																<span>
-																	{__(
-																		'Click to Upload Image',
-																		'widtm-team-member'
-																	)}
-																</span>
-															</Button>
-														)}
-													</div>
-													</div>
+														</div>
+													)}
+												/>
+											</MediaUploadCheck>
+											<TextControl
+												label={__(
+													'Title',
+													'wiztm-team-member'
+												)}
+												value={title}
+												onChange={(title) =>
+													setAttributes({ title })
+												}
+												placeholder={__(
+													'Write service title',
+													'wiztm-team-member'
 												)}
 											/>
-										</MediaUploadCheck>
-									</PanelBody>
-									<PanelBody
-										title={__(
-											'Service Content',
-											'bwdssb-service-showcase'
-										)}
-										initialOpen={false}
-										className={`${
-											expandedPanels
-												? 'parent-panelbody'
-												: ''
-										}`}
-									>
-										<Fragment>
-											{items &&
-												items.map((item, index) => (
-													<div
-														key={index}
-														className="bwdssb-service-showcase-container"
-													>
-														<MediaUploadCheck>
-															<MediaUpload
-																onSelect={(
-																	newImage
-																) =>
-																	updateItem(
-																		index,
-																		'imageUrl',
-																		newImage
-																	)
-																}
-																allowedTypes={[
-																	'image',
-																]}
-																value={
-																	item.imageUrl
-																		? item
-																				.imageUrl
-																				.id
-																		: ''
-																}
-																render={({
-																	open,
-																}) => (
-																	
-																	<div className="service-image-control">
-																		{item.imageUrl ? (
-																			<div className="service-image-preview-container">
-																				<Button
-																					className="service-image-preview-wrapper"
-																					onClick={
-																						open
-																					}
-																				>
-																					<img
-																						src={
-																							item
-																								.imageUrl
-																								.url
-																						}
-																						alt={
-																							item.text1
-																						}
-																						className="service-image-preview"
-																					/>
-																					<span className="service-edit-icon">
-																						<i className="dashicons dashicons-edit"></i>
-																					</span>
-																				</Button>
-																				<Button
-																					className="service-close-icon"
-																					onClick={() =>
-																						updateItem(
-																							index,
-																							'imageUrl',
-																							null
-																						)
-																					}
-																				>
-																					<i className="dashicons dashicons-dismiss"></i>
-																				</Button>
-																			</div>
-																		) : (
-																			<Button
-																				className="service-placeholder-image"
-																				onClick={
-																					open
-																				}
-																			>
-																				<img
-																					src={
-																						placeholderImageUrl
-																					}
-																					alt="Placeholder"
-																				/>
-																				<span>
-																					{__(
-																						'Click to Upload Image',
-																						'widtm-team-member'
-																					)}
-																				</span>
-																			</Button>
-																		)}
-																	</div>
+											<SelectControl
+												label={__(
+													'Title Tag',
+													'wiztm-team-member'
+												)}
+												value={titleTag}
+												options={SelectedTag}
+												onChange={(value) =>
+													setAttributes({
+														titleTag: value,
+													})
+												}
+											/>
+											<TextControl
+												label={__(
+													'Designation',
+													'wiztm-team-member'
+												)}
+												value={designation}
+												onChange={(value) =>
+													setAttributes({
+														designation: value,
+													})
+												}
+												placeholder={__(
+													'Write Designation',
+													'wiztm-team-member'
+												)}
+											/>
+											<TextareaControl
+												label={__(
+													'Description',
+													'wiztm-team-member'
+												)}
+												value={description}
+												onChange={(newText) =>
+													setAttributes({
+														description: newText,
+													})
+												}
+												placeholder={__(
+													'Write description',
+													'wiztm-team-member'
+												)}
+											/>
+											<PanelBody
+												title={__(
+													'Icons',
+													'wiztm-team-member'
+												)}
+												initialOpen={false}
+												className={`${
+													expandedPanels
+														? 'parent-panelbody'
+														: ''
+												}`}
+											>
+												{icons &&
+													icons.map((icon, index) => (
+														<div key={index}>
+															<PanelBody
+																title={__(
+																	`Icon ${
+																		index +
+																		1
+																	}`,
+																	'wiztm-team-member'
 																)}
-															/>
-														</MediaUploadCheck>
-														<TextControl
-															label={__(
-																'Title',
-																'bwdssb-service-showcase'
-															)}
-															value={item.title}
-															onChange={(
-																newText
-															) =>
-																updateItemText(
-																	index,
-																	'title',
-																	newText
-																)
-															}
-															placeholder={__(
-																'Write service title',
-																'bwdssb-service-showcase'
-															)}
-														/>
-														<SelectControl
-															label={__(
-																'Title Tag',
-																'bwdssb-service-showcase'
-															)}
-															value={titleTag}
-															options={
-																SelectedTag
-															}
-															onChange={(value) =>
-																setAttributes({
-																	titleTag:
-																		value,
-																})
-															}
-														/>
-														<TextareaControl
-															label={__(
-																'Description',
-																'bwdssb-service-showcase'
-															)}
-															value={
-																item.description
-															}
-															onChange={(
-																newText
-															) =>
-																updateItemText(
-																	index,
-																	'description',
-																	newText
-																)
-															}
-															placeholder={__(
-																'Write service member description',
-																'bwdssb-service-showcase'
-															)}
-														/>
-														<ToggleControl
-															label={__(
-																'Enable Box Link',
-																'bwdssb-service-showcase'
-															)}
-															className="bwd-toggle-control"
-															checked={
-																item.showLink
-															}
-															onChange={(
-																newVal
-															) => {
-																updateItemText(
-																	index,
-																	'showLink',
-																	newVal
-																);
-															}}
-														/>
-														{item.showLink && (
-															<>
-																<TextControl
+																initialOpen={
+																	false
+																}
+															>
+																<p>ok</p>
+																<IconPicker
 																	label={__(
-																		'Box Link',
+																		'Icon',
 																		'bwdssb-service-showcase'
 																	)}
-																	value={
-																		item.boxLink
+																	selectedIcon={
+																		icons[
+																			index
+																		].icons
 																	}
-																	onChange={(
-																		newValue
+																	changeIcon={(
+																		newIcon
 																	) =>
-																		updateItemText(
-																			index,
-																			'boxLink',
-																			newValue
+																		setAttributes(
+																			{
+																				icons: icons.map(
+																					( icon, i ) =>
+																						i === index
+																							? {
+																									...icon,
+																									icons: newIcon,
+																							  }
+																							: icon
+																				),
+																			}
 																		)
 																	}
-																	placeholder={__(
-																		'place your link',
-																		'bwdssb-service-showcase'
-																	)}
 																/>
-																<ToggleControl
-																	label={__(
-																		'Open in New Tab',
-																		'widtm-team-member'
-																	)}
-																	className="bwd-toggle-control"
-																	checked={
-																		item.newTab
-																	}
-																	onChange={(
-																		newVal
-																	) => {
-																		updateItemText(
-																			index,
-																			'newTab',
-																			newVal
-																		);
-																	}}
-																/>
-															</>
-														)}
-													</div>
-												))}
-										</Fragment>
-									</PanelBody>
+															</PanelBody>
+														</div>
+													))}
+
+												<Button
+													className="team-add-item"
+													onClick={() =>
+														setAttributes({
+															icons: [
+																...icons,
+																{
+																	id:
+																		icons.length +
+																		1,
+																	icons: '',
+																},
+															],
+														})
+													}
+												>
+													<i className="fas fa-plus"></i>
+													{__(
+														'Add Icon',
+														'wiztm-team-member'
+													)}
+												</Button>
+											</PanelBody>
+										</PanelBody>
+									</div>
 								</Fragment>
 							),
 						},

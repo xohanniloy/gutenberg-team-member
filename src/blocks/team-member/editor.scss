@@ -29,27 +29,33 @@
 		}
 	}
 }
-.service-add-item {
-	background: #007cba;
+.team-add-item {
+    background: #007cba;
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
     line-height: 0;
-    padding: 18px 12px;
+    padding: 13px 12px;
     margin-top: 10px;
     justify-content: center;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 0;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	&:focus {
+		box-shadow: none;
+	}
 	&:hover {
+		background: #0067a3;
 		color: #fff;
 	}
-	span {
-		font-size: 16px;
-		height: 12px;
-	}
 }
-.bwdssb-service-showcase-container {
+.bwdssb-team-container {
 	position: relative;
 	margin-bottom: 15px;
 	.components-panel__body {
