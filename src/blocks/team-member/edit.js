@@ -18,9 +18,18 @@ import './style.scss';
  * Internal dependencies
  */
 import Inspector from './inspector';
+import iconLib from '../../options/icons';
 // Edit Function
 export default function Edit({ attributes, setAttributes }) {
-	const { style, myImageUrl, title, titleTag, designation, description, icons } = attributes;
+	const {
+		style,
+		myImageUrl,
+		title,
+		titleTag,
+		designation,
+		description,
+		icons,
+	} = attributes;
 	return (
 		<Fragment>
 			<Inspector attributes={attributes} setAttributes={setAttributes} />
@@ -41,7 +50,7 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 					<div className="member-info-1">
 						<RichText
-							tagName={titleTag} 
+							tagName={titleTag}
 							value={title}
 							onChange={(value) =>
 								setAttributes({ title: value })
@@ -68,24 +77,13 @@ export default function Edit({ attributes, setAttributes }) {
 							className="member-bio-1"
 						/>
 						<div className="social-links-1">
-							<a
-								href="https://bestwpdeveloper.com/"
-								className="social-link-1"
-							>
-								<i className="fa-brands fa-twitter"></i>
-							</a>
-							<a
-								href="https://bestwpdeveloper.com/"
-								className="social-link-1"
-							>
-								<i className="fa-brands fa-linkedin-in"></i>
-							</a>
-							<a
-								href="https://bestwpdeveloper.com/"
-								className="social-link-1"
-							>
-								<i className="fa-brands fa-github"></i>
-							</a>
+							{icons &&
+								icons.length > 0 &&
+								icons.map((iconItem, index) => (
+									<a href="#" key={index}>
+										{iconLib[iconItem.icons] || null}
+									</a>
+								))}
 						</div>
 					</div>
 				</div>

@@ -1,867 +1,819 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
-
-
- /* Layout 1: Modern Card Grid */
- .style-1 {
-     .team-member-1 {
-         background-color: white;
-         border-radius: 12px;
-         overflow: hidden;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-         &:hover {
-             transform: translateY(-10px);
-             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-         }
-
-         .member-image-1 {
-             width: 100%;
-             height: 280px;
-             object-fit: cover;
-         }
-
-         .member-info-1 {
-             padding: 20px;
-         }
-
-         .member-name-1 {
-             font-size: 22px;
-             margin-bottom: 8px;
-             color: #333;
-         }
-
-         .member-role-1 {
-             color: #666;
-             font-size: 16px;
-             margin-bottom: 15px;
-         }
-
-         .member-bio-1 {
-             color: #666;
-             font-size: 15px;
-             line-height: 1.6;
-             margin-bottom: 20px;
-         }
-
-         .social-links-1 {
-             display: flex;
-             gap: 15px;
-         }
-
-         .social-link-1 {
-             color: #333;
-             text-decoration: none;
-             font-size: 20px;
-             transition: color 0.3s ease;
-         }
-
-         .social-link-1:hover {
-             color: #3498db;
-         }
-     }
- }
-
- // Layout 2: Clean Card with Shadow
- .style-2 {
-
-     .team-member-1 {
-         display: flex;
-         flex-direction: column;
-         background-color: #ffffff;
-         border-radius: 10px;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-         overflow: hidden;
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-         max-width: 350px;
-
-         &:hover {
-             transform: translateY(-5px);
-             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-         }
-
-         .member-image-1 {
-             width: 100%;
-             height: 260px;
-             object-fit: cover;
-         }
-
-         .member-info-1 {
-             padding: 25px;
-             text-align: center;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 22px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 16px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 15px;
-                 color: #666;
-                 line-height: 1.6;
-                 margin-bottom: 20px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 justify-content: center;
-                 gap: 15px;
-
-                 .social-link-1 {
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     width: 36px;
-                     height: 36px;
-                     border-radius: 50%;
-                     background-color: #f5f5f5;
-                     color: #333;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         background-color: #6772e5;
-                         color: white;
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 3: Horizontal Card with Gradient Border
- .style-3 {
-     .team-member-1 {
-         display: flex;
-         background-color: white;
-         border-radius: 12px;
-         overflow: hidden;
-         max-width: 550px;
-         position: relative;
-         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-         &::before {
-             content: "";
-             position: absolute;
-             inset: 0;
-             border-radius: 12px;
-             padding: 2px;
-             background: linear-gradient(45deg, #6772e5, #4fc3f7);
-             -webkit-mask:
-                 linear-gradient(#fff 0 0) content-box,
-                 linear-gradient(#fff 0 0);
-             -webkit-mask-composite: xor;
-             mask-composite: exclude;
-             pointer-events: none;
-         }
-
-         .member-image-1 {
-             width: 200px;
-             height: 200px;
-             object-fit: cover;
-         }
-
-         .member-info-1 {
-             padding: 25px;
-             display: flex;
-             flex-direction: column;
-             justify-content: center;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 22px;
-                 font-weight: 700;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 15px;
-                 color: #6772e5;
-                 margin: 0 0 12px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #555;
-                 line-height: 1.6;
-                 margin-bottom: 15px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 12px;
-
-                 .social-link-1 {
-                     color: #555;
-                     font-size: 18px;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6772e5;
-                         transform: translateY(-2px);
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 4: Minimal with Accent Border
- .style-4 {
-     .team-member-1 {
-         display: flex;
-         flex-direction: column;
-         max-width: 320px;
-         background-color: #ffffff;
-         border-radius: 4px;
-         overflow: hidden;
-         border-top: 4px solid #6772e5;
-         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-
-         .member-image-1 {
-             width: 100%;
-             height: 320px;
-             object-fit: cover;
-             filter: grayscale(20%);
-             transition: filter 0.3s ease;
-         }
-
-         &:hover .member-image-1 {
-             filter: grayscale(0%);
-         }
-
-         .member-info-1 {
-             padding: 20px;
-             border-top: 1px solid #f0f0f0;
-
-             .member-name-1 {
-                 margin: 0 0 2px;
-                 font-size: 18px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #666;
-                 line-height: 1.5;
-                 margin-bottom: 15px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 10px;
-
-                 .social-link-1 {
-                     color: #666;
-                     font-size: 16px;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6772e5;
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 5: Circular Image with Overlap
- .style-5 {
-     .team-member-1 {
-         position: relative;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         background-color: white;
-         border-radius: 10px;
-         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-         padding: 25px;
-         padding-top: 70px;
-         max-width: 300px;
-         margin-top: 50px;
-
-         .member-image-1 {
-             position: absolute;
-             top: -50px;
-             width: 100px;
-             height: 100px;
-             border-radius: 50%;
-             object-fit: cover;
-             border: 4px solid white;
-             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-         }
-
-         .member-info-1 {
-             text-align: center;
-             width: 100%;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 20px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-                 position: relative;
-                 display: inline-block;
-
-                 &::after {
-                     content: "";
-                     display: block;
-                     width: 40px;
-                     height: 2px;
-                     background-color: #6772e5;
-                     margin: 10px auto 0;
-                 }
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #666;
-                 line-height: 1.6;
-                 margin-bottom: 20px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 justify-content: center;
-                 gap: 12px;
-
-                 .social-link-1 {
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     width: 32px;
-                     height: 32px;
-                     border-radius: 50%;
-                     background-color: #f5f7ff;
-                     color: #6772e5;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         transform: translateY(-3px);
-                         box-shadow: 0 5px 10px rgba(103, 114, 229, 0.2);
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 6: Modern Dark Theme
- .style-6 {
-     .team-member-1 {
-         display: flex;
-         flex-direction: column;
-         max-width: 340px;
-         background-color: #1f2937;
-         border-radius: 12px;
-         overflow: hidden;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-         .member-image-1 {
-             width: 100%;
-             height: 280px;
-             object-fit: cover;
-             filter: contrast(1.1);
-         }
-
-         .member-info-1 {
-             padding: 25px;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 22px;
-                 font-weight: 600;
-                 color: #ffffff;
-             }
-
-             .member-role-1 {
-                 font-size: 15px;
-                 color: #60a5fa;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #d1d5db;
-                 line-height: 1.7;
-                 margin-bottom: 25px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 15px;
-
-                 .social-link-1 {
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     width: 38px;
-                     height: 38px;
-                     border-radius: 8px;
-                     background-color: rgba(255, 255, 255, 0.1);
-                     color: #ffffff;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         background-color: #60a5fa;
-                         transform: translateY(-2px);
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 7: Frosted Glass Effect
- .style-7 {
-     .team-member-1 {
-         position: relative;
-         max-width: 350px;
-         border-radius: 16px;
-         overflow: hidden;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-         .member-image-1 {
-             width: 100%;
-             height: 380px;
-             object-fit: cover;
-         }
-
-         .member-info-1 {
-             position: absolute;
-             bottom: 0;
-             left: 0;
-             right: 0;
-             padding: 25px;
-             background: rgba(255, 255, 255, 0.8);
-             backdrop-filter: blur(10px);
-             border-top: 1px solid rgba(255, 255, 255, 0.3);
-             transition: transform 0.3s ease;
-             transform: translateY(70%);
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 20px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #555;
-                 line-height: 1.6;
-                 margin-bottom: 15px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 12px;
-
-                 .social-link-1 {
-                     color: #333;
-                     font-size: 16px;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6772e5;
-                         transform: scale(1.2);
-                     }
-                 }
-             }
-         }
-
-         &:hover .member-info-1 {
-             transform: translateY(0);
-         }
-     }
- }
-
- // Layout 8: Offset Border
- .style-8 {
-     .team-member-1 {
-         position: relative;
-         display: flex;
-         flex-direction: column;
-         max-width: 320px;
-         background-color: white;
-         padding: 5px;
-
-         &::before {
-             content: "";
-             position: absolute;
-             top: 15px;
-             right: -15px;
-             bottom: -15px;
-             left: 15px;
-             background-color: transparent;
-             border: 2px solid #6772e5;
-             z-index: -1;
-             transition: all 0.3s ease;
-         }
-
-         &:hover::before {
-             top: 10px;
-             right: -10px;
-             bottom: -10px;
-             left: 10px;
-         }
-
-         .member-image-1 {
-             width: 100%;
-             height: 300px;
-             object-fit: cover;
-         }
-
-         .member-info-1 {
-             padding: 20px;
-             background-color: white;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 20px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #666;
-                 line-height: 1.6;
-                 margin-bottom: 15px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 15px;
-
-                 .social-link-1 {
-                     color: #666;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6772e5;
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 9: Colored Background with Overlay
- .style-9 {
-     .team-member-1 {
-         position: relative;
-         max-width: 320px;
-         border-radius: 0;
-         overflow: hidden;
-
-         .member-image-1 {
-             width: 100%;
-             height: 400px;
-             object-fit: cover;
-             transition: transform 0.5s ease;
-         }
-
-         &:hover .member-image-1 {
-             transform: scale(1.05);
-         }
-
-         .member-info-1 {
-             position: absolute;
-             bottom: 0;
-             left: 0;
-             right: 0;
-             padding: 30px 20px;
-             background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-             color: white;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 22px;
-                 font-weight: 600;
-                 color: white;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6ccff6;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: rgba(255, 255, 255, 0.8);
-                 line-height: 1.6;
-                 margin-bottom: 15px;
-                 max-height: 0;
-                 overflow: hidden;
-                 transition: max-height 0.4s ease, margin-bottom 0.4s ease;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 15px;
-                 opacity: 0;
-                 transform: translateY(10px);
-                 transition: all 0.3s ease;
-
-                 .social-link-1 {
-                     color: white;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6ccff6;
-                         transform: scale(1.2);
-                     }
-                 }
-             }
-         }
-
-         &:hover .member-info-1 {
-             .member-bio-1 {
-                 max-height: 100px;
-                 margin-bottom: 15px;
-             }
-
-             .social-links-1 {
-                 opacity: 1;
-                 transform: translateY(0);
-             }
-         }
-     }
- }
-
-
- // Layout 10: Asymmetric Design
- .style-10 {
-     .team-member-1 {
-         position: relative;
-         display: flex;
-         max-width: 500px;
-         background-color: white;
-         border-radius: 8px;
-         overflow: hidden;
-         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-
-         .member-image-1 {
-             width: 40%;
-             min-height: 220px;
-             object-fit: cover;
-             clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-         }
-
-         .member-info-1 {
-             padding: 30px 25px 30px 35px;
-             margin-left: -20px;
-             display: flex;
-             flex-direction: column;
-             justify-content: center;
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 22px;
-                 font-weight: 700;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-                 position: relative;
-                 display: inline-block;
-                 padding-bottom: 10px;
-
-                 &::after {
-                     content: "";
-                     position: absolute;
-                     bottom: 0;
-                     left: 0;
-                     width: 30px;
-                     height: 2px;
-                     background-color: #6772e5;
-                 }
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #666;
-                 line-height: 1.6;
-                 margin-bottom: 20px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 12px;
-
-                 .social-link-1 {
-                     color: #666;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         color: #6772e5;
-                     }
-                 }
-             }
-         }
-     }
- }
-
- // Layout 11: Elegant Card with Line Accents
- .style-11 {
-     .team-member-1 {
-         position: relative;
-         display: flex;
-         flex-direction: column;
-         max-width: 330px;
-         background-color: white;
-         border-radius: 10px;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-         overflow: hidden;
-
-         &::before,
-         &::after {
-             content: "";
-             position: absolute;
-             background-color: #6772e5;
-             z-index: 1;
-         }
-
-         &::before {
-             top: 0;
-             left: 30px;
-             width: 3px;
-             height: 40px;
-         }
-
-         &::after {
-             top: 30px;
-             right: 0;
-             width: 40px;
-             height: 3px;
-         }
-
-         .member-image-1 {
-             width: 100%;
-             height: 300px;
-             object-fit: cover;
-             border-bottom: 3px solid #f3f4f6;
-         }
-
-         .member-info-1 {
-             padding: 25px;
-             position: relative;
-
-             &::before,
-             &::after {
-                 content: "";
-                 position: absolute;
-                 background-color: #6772e5;
-             }
-
-             &::before {
-                 bottom: 0;
-                 right: 30px;
-                 width: 3px;
-                 height: 40px;
-             }
-
-             &::after {
-                 bottom: 30px;
-                 left: 0;
-                 width: 40px;
-                 height: 3px;
-             }
-
-             .member-name-1 {
-                 margin: 0 0 5px;
-                 font-size: 20px;
-                 font-weight: 600;
-                 color: #333;
-             }
-
-             .member-role-1 {
-                 font-size: 14px;
-                 color: #6772e5;
-                 margin: 0 0 15px;
-                 font-weight: 500;
-             }
-
-             .member-bio-1 {
-                 font-size: 14px;
-                 color: #666;
-                 line-height: 1.6;
-                 margin-bottom: 20px;
-             }
-
-             .social-links-1 {
-                 display: flex;
-                 gap: 12px;
-
-                 .social-link-1 {
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     width: 34px;
-                     height: 34px;
-                     border: 1px solid #eaeaea;
-                     border-radius: 50%;
-                     color: #666;
-                     transition: all 0.3s ease;
-
-                     &:hover {
-                         background-color: #6772e5;
-                         border-color: #6772e5;
-                         color: white;
-                     }
-                 }
-             }
-         }
-     }
- }
+/* Base styles for all team members */
+.team-member-1 {
+    font-family: 'Inter', sans-serif;
+    // margin-bottom: 30px;
+    height: 100%;
+    position: relative;
+}
+
+.member-image-1 {
+    object-fit: cover;
+}
+
+.member-name-1 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.member-role-1 {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.member-bio-1 {
+    margin-bottom: 1rem;
+}
+
+.social-links-1 {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links-1 a {
+    transition: transform 0.2s, color 0.2s;
+    text-decoration: none;
+}
+
+.social-links-1 a:hover {
+    transform: translateY(-3px);
+}
+
+/* Team Member Style Variants */
+
+/* Style 1: Modern Gradient Card with Slanted Edge */
+.style-1 {
+    .team-member-1 {
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+        background: rgba(235, 246, 244, 1);
+        height: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            z-index: 1;
+        }
+
+        &:hover .member-image-1 {
+            transform: scale(1.05);
+        }
+
+        .member-image-1 {
+            width: 100%;
+            height: 200px;
+            object-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            transition: all 0.4s ease;
+
+        }
+
+        .member-info-1 {
+            padding: 1.5rem;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-links-1 {
+            a {
+                color: #8B5CF6;
+
+                &:hover {
+                    color: #D946EF;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Style 2: Floating Card with Circular Accent */
+.style-2 {
+    .team-member-1 {
+        text-align: center;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        padding: 3rem 2rem 2rem;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #F97316 0%, #FBBF24 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #0EA5E9 0%, #22D3EE 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-image-1 {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-info-1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links-1 {
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 5px;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: linear-gradient(45deg, #F97316 0%, #FBBF24 100%);
+                border-radius: 50%;
+                color: white;
+                transition: transform 0.3s, box-shadow 0.3s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Style 3: Asymmetric Cut Card with Bold Gradient */
+.style-3 {
+    .team-member-1 {
+        border-radius: 0;
+        overflow: hidden;
+        background: linear-gradient(135deg, #8B5CF6, #D946EF);
+        color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .member-image-1 {
+            width: 100%;
+            height: 200px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .member-info-1 {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .member-role-1 {
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+        }
+
+        .member-name-1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .social-links-1 {
+            a {
+                color: white;
+                margin-right: 1rem;
+                opacity: 0.8;
+                transition: opacity 0.3s, transform 0.3s;
+
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+
+/* Style 4: Layered Depth Card with Square Accent */
+.team-member-1.style4 {
+    background-color: #1A1F2C;
+    color: white;
+    border-radius: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    padding: 1.5rem;
+    box-shadow: 15px 15px 0 #0EA5E9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member-1.style4:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 20px 20px 0 #0EA5E9;
+}
+
+.team-member-1.style4 .member-image-1 {
+    width: calc(100% + 3rem);
+    height: 220px;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    object-position: center top;
+    border-bottom: 3px solid #0EA5E9;
+}
+
+.team-member-1.style4 .member-info-1 {
+    flex: 1;
+}
+
+.team-member-1.style4 .member-role-1 {
+    color: #0EA5E9;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.team-member-1.style4 .member-name-1::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0EA5E9;
+    margin-top: 0.75rem;
+}
+
+.team-member-1.style4 .social-links-1 {
+    margin-top: 1.5rem;
+}
+
+.team-member-1.style4 .social-links-1 {
+    color: white;
+    margin-right: 1.25rem;
+    transition: color 0.3s;
+}
+
+.team-member-1.style4 .social-links-1:hover {
+    color: #0EA5E9;
+}
+
+/* Style 5: Split Design with Diagonal Gradient */
+.team-member-1.style5 {
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #f0f9ff 50%, #e0f2fe 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.team-member-1.style5:hover {
+    transform: translateY(-10px);
+}
+
+.team-member-1.style5 .member-image-1 {
+    width: 100%;
+    height: 220px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    transition: transform 0.5s;
+}
+
+.team-member-1.style5:hover .member-image-1 {
+    transform: scale(1.03);
+}
+
+.team-member-1.style5 .member-info-1 {
+    padding: 2rem;
+    background-color: transparent;
+    flex: 1;
+    position: relative;
+}
+
+.team-member-1.style5 .member-name-1 {
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.team-member-1.style5 .member-name-1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #0EA5E9, #22D3EE);
+}
+
+.team-member-1.style5 .social-links-1 {
+    padding-top: 1.5rem;
+    margin-top: auto;
+}
+
+.team-member-1.style5 .social-links-1 {
+    color: #0EA5E9;
+    margin-right: 1.25rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.team-member-1.style5 .social-links-1:hover {
+    color: #0284C7;
+    transform: scale(1.2);
+}
+
+/* Style 6: Modern Glass Morphism */
+.team-member-1.style6 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-1.style6::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(217, 70, 239, 0.2) 100%);
+    z-index: 0;
+}
+
+.team-member-1.style6 .member-image-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    z-index: 1;
+}
+
+.team-member-1.style6:hover .member-image-1 {
+    transform: scale(1.05);
+}
+
+.team-member-1.style6 .member-info-1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.team-member-1.style6:hover .member-info-1 {
+    transform: translateY(-10px);
+}
+
+.team-member-1.style6 .member-name-1 {
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-member-1.style6 .member-role-1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.team-member-1.style6 .social-links-1 {
+    color: white;
+    margin-right: 1rem;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.team-member-1.style6 .social-links-1:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Style 7: Futuristic Card with Dynamic Border */
+.team-member-1.style7 {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.team-member-1.style7::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #F97316, #FBBF24, #0EA5E9, #22D3EE);
+    background-size: 300% 100%;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.team-member-1.style7:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-1.style7 .member-image-1 {
+    width: 100%;
+    height: 220px;
+    transition: transform 0.5s;
+}
+
+.team-member-1.style7:hover .member-image-1 {
+    transform: scale(1.05);
+}
+
+.team-member-1.style7 .member-info-1 {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member-1.style7 .member-name-1 {
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #F97316, #0EA5E9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-member-1.style7 .member-role-1 {
+    font-weight: 600;
+    color: #64748B;
+}
+
+.team-member-1.style7 .social-links-1 {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #F1F5F9;
+}
+
+.team-member-1.style7 .social-links-1 {
+    background: linear-gradient(45deg, #F97316, #FBBF24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 1.25rem;
+    transition: transform 0.3s;
+}
+
+.team-member-1.style7 .social-links-1:hover {
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* Style 8: Dynamic Hexagon Shape with Bold Angles */
+.team-member-1.style8 {
+    background-color: white;
+    overflow: visible;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member-1.style8:hover {
+    transform: scale(1.03);
+}
+
+.team-member-1.style8 .member-image-1 {
+    width: 100%;
+    height: 200px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
+    transition: filter 0.3s;
+}
+
+.team-member-1.style8:hover .member-image-1 {
+    filter: saturate(1.2);
+}
+
+.team-member-1.style8 .member-info-1 {
+    padding: 1.75rem;
+    flex: 1;
+    background: white;
+    z-index: 1;
+}
+
+.team-member-1.style8 .member-name-1 {
+    color: #1E293B;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.team-member-1.style8 .member-name-1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #7E69AB, #6E59A5);
+}
+
+.team-member-1.style8 .member-role-1 {
+    color: #7E69AB;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+
+.team-member-1.style8 .social-links-1 {
+    margin-top: 1.5rem;
+}
+
+.team-member-1.style8 .social-links-1 {
+    color: #7E69AB;
+    margin-right: 1.25rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.team-member-1.style8 .social-links-1:hover {
+    color: #6E59A5;
+    transform: scale(1.2);
+}
+
+/* Style 9: Abstract Shapes with Vibrant Gradients */
+.team-member-1.style9 {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.team-member-1.style9::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #D946EF 0%, #8B5CF6 100%);
+    z-index: -1;
+}
+
+.team-member-1.style9::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #0EA5E9 0%, #22D3EE 100%);
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.team-member-1.style9 .member-image-1 {
+    width: 100%;
+    height: 220px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    transition: transform 0.4s;
+}
+
+.team-member-1.style9:hover .member-image-1 {
+    transform: scale(1.05);
+}
+
+.team-member-1.style9 .member-info-1 {
+    padding: 2rem;
+    flex: 1;
+    position: relative;
+}
+
+.team-member-1.style9 .member-name-1 {
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #D946EF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-member-1.style9 .member-role-1 {
+    color: #0EA5E9;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.team-member-1.style9 .social-links-1 {
+    margin-right: 1.25rem;
+    color: #8B5CF6;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.team-member-1.style9 .social-links-1:hover {
+    color: #D946EF;
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Style 10: Ultra Modern Minimalist with 3D Effect */
+.team-member-1.style10 {
+    border-radius: 0;
+    overflow: hidden;
+    background: white;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05),
+        -20px -20px 60px rgba(255, 255, 255, 0.8);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.team-member-1.style10:hover {
+    transform: translateY(-10px);
+}
+
+.team-member-1.style10 .member-image-1 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.team-member-1.style10 .member-info-1 {
+    padding: 2rem 2rem 2rem 10rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right, rgba(249, 115, 22, 0.05) 0%, rgba(217, 70, 239, 0.05) 100%);
+}
+
+.team-member-1.style10 .member-name-1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #1E293B;
+}
+
+.team-member-1.style10 .member-role-1 {
+    display: inline-block;
+    background: linear-gradient(45deg, #F97316, #D946EF);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.team-member-1.style10 .social-links-1 {
+    margin-top: auto;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 1.5rem;
+}
+
+.team-member-1.style10 .social-links-1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 1rem;
+    background: white;
+    color: #64748B;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.team-member-1.style10 .social-links-1:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
+    color: #F97316;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .style-container {
+        margin-bottom: 2rem;
+    }
+
+    .team-member-1.style6 {
+        height: 400px;
+    }
+
+    .team-member-1.style10 .member-image-1 {
+        width: 100px;
+        height: 100px;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .team-member-1.style10 .member-info-1 {
+        padding: 1.5rem 1.5rem 1.5rem 8rem;
+    }
+}

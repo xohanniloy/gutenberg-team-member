@@ -1,7 +1,6 @@
 import * as constants from './constants';
 import * as generators from '../../generators';
 
-
 const { generateResRangleControlAttributes } = generators;
 
 const {
@@ -68,7 +67,7 @@ const attributes = {
 		default: 'Team Member',
 	},
 	currentMedia: {
-		type: 'string', 
+		type: 'string',
 		default: 'icon',
 	},
 	containerWidth: {
@@ -85,11 +84,16 @@ const attributes = {
 	},
 	description: {
 		type: 'string',
-		default: 'Alex brings over 8 years of experience in creating intuitive user interfaces and seamless product experiences.',
+		default:
+			'Alex brings over 8 years of experience in creating intuitive user interfaces and seamless product experiences.',
 	},
 	icons: {
 		type: 'array',
-		default: [],
+		default: [
+			{ id: 1, icons: 'brand-twitter' },
+			{ id: 2, icons: 'brand-linkedin' },
+			{ id: 3, icons: 'brand-github' },
+		],
 	},
 	titleColor: {
 		type: 'string',

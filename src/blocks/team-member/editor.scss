@@ -55,6 +55,12 @@
 		color: #fff;
 	}
 }
+.wiztm-icons-repeater-item {
+	margin-bottom: 5px;
+	.components-panel__body.is-opened {
+    border: 1px solid #0b07f1;
+}
+}
 .bwdssb-team-container {
 	position: relative;
 	margin-bottom: 15px;
@@ -262,9 +268,15 @@
 		border: none;
 		border-top: none;
 		margin-top: unset; 
+			margin-bottom: 3px;
+		
 		.components-panel__body-toggle {
-			box-shadow: 0 0 1px #3f51b59e;
-			background: #fff0f0;
+			box-shadow: none;
+			background: #716fff;
+			color: #fff;
+			svg {
+				fill: #fff;
+			}
 		}
 	}
 	 .components-base-control__label {

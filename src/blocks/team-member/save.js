@@ -2,12 +2,13 @@
  * WordPress dependencies
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
-// import icons from '../../options/icons';
+import iconLib from '../../options/icons';
 // import { Fragment } from 'react/jsx-runtime';
 import { Fragment } from '@wordpress/element';
 
 export default function save({ attributes }) {
-	const { style, myImageUrl, title, titleTag, designation, description } = attributes;
+	const { style, myImageUrl, title, titleTag, designation, description, icons } =
+		attributes;
 	return (
 		<Fragment>
 			<div
@@ -42,7 +43,7 @@ export default function save({ attributes }) {
 							className="member-bio-1"
 						/>
 						<div className="social-links-1">
-							<a
+							{/* <a
 								href="https://bestwpdeveloper.com/"
 								className="social-link-1"
 							>
@@ -59,7 +60,14 @@ export default function save({ attributes }) {
 								className="social-link-1"
 							>
 								<i className="fa-brands fa-github"></i>
-							</a>
+							</a> */}
+							{icons &&
+								icons.length > 0 &&
+								icons.map((iconItem, index) => (
+									<a href="#" key={index}>
+										{iconLib[iconItem.icons] || null}
+									</a>
+								))}
 						</div>
 					</div>
 				</div>

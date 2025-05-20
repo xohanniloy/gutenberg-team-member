@@ -37,6 +37,7 @@ import aligns from '../../options/align';
 import SelectedTag from '../../options/select-tag';
 import SelectStyle from '../../options/selected-style';
 import placeholderImageUrl from '../../../includes/assets/img/bwd-placeholder.jpg';
+import iconLib from '../../options/icons';
 
 const {
 	ResRangleControl,
@@ -406,21 +407,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 													'wiztm-team-member'
 												)}
 											/>
-											<PanelBody
-												title={__(
-													'Icons',
-													'wiztm-team-member'
-												)}
-												initialOpen={false}
-												className={`${
-													expandedPanels
-														? 'parent-panelbody'
-														: ''
-												}`}
-											>
 												{icons &&
 													icons.map((icon, index) => (
-														<div key={index}>
+														<div key={index} className='wiztm-icons-repeater-item'>
 															<PanelBody
 																title={__(
 																	`Icon ${
@@ -433,16 +422,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 																	false
 																}
 															>
-																<p>ok</p>
 																<IconPicker
 																	label={__(
 																		'Icon',
 																		'bwdssb-service-showcase'
 																	)}
 																	selectedIcon={
-																		icons[
-																			index
-																		].icons
+																		icons[index].icons
 																	}
 																	changeIcon={(
 																		newIcon
@@ -488,7 +474,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 														'wiztm-team-member'
 													)}
 												</Button>
-											</PanelBody>
 										</PanelBody>
 									</div>
 								</Fragment>
