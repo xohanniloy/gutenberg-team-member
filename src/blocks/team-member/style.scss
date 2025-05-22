@@ -1,40 +1,40 @@
 /* Base styles for all team members */
-.team-member-1 {
+.wiztm-team-member {
     font-family: 'Inter', sans-serif;
     // margin-bottom: 30px;
     height: 100%;
     position: relative;
 }
 
-.member-image-1 {
+.wiztm-team-image {
     object-fit: cover;
 }
 
-.member-name-1 {
+.wiztm-team-name {
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
-.member-role-1 {
+.wiztm-team-role {
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
 }
 
-.member-bio-1 {
+.wiztm-team-bio {
     margin-bottom: 1rem;
 }
 
-.social-links-1 {
+.wiztm-team-social {
     display: flex;
     gap: 10px;
 }
 
-.social-links-1 a {
+.wiztm-team-social a {
     transition: transform 0.2s, color 0.2s;
     text-decoration: none;
 }
 
-.social-links-1 a:hover {
+.wiztm-team-social a:hover {
     transform: translateY(-3px);
 }
 
@@ -42,7 +42,7 @@
 
 /* Style 1: Modern Gradient Card with Slanted Edge */
 .style-1 {
-    .team-member-1 {
+    .wiztm-team-member {
         display: flex;
         flex-direction: column;
         border-radius: 16px;
@@ -64,11 +64,11 @@
             z-index: 1;
         }
 
-        &:hover .member-image-1 {
+        &:hover .wiztm-team-image {
             transform: scale(1.05);
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 100%;
             height: 200px;
             object-position: center;
@@ -77,14 +77,14 @@
 
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             padding: 1.5rem;
             flex: 1;
             position: relative;
             z-index: 2;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             a {
                 color: #8B5CF6;
 
@@ -102,7 +102,7 @@
 
 /* Style 2: Floating Card with Circular Accent */
 .style-2 {
-    .team-member-1 {
+    .wiztm-team-member {
         text-align: center;
         border-radius: 20px;
         background: white;
@@ -145,7 +145,7 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 140px;
             height: 140px;
             border-radius: 50%;
@@ -156,12 +156,12 @@
             z-index: 1;
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             position: relative;
             z-index: 1;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             justify-content: center;
             margin-top: 1.5rem;
             gap: 5px;
@@ -190,7 +190,7 @@
 
 /* Style 3: Asymmetric Cut Card with Bold Gradient */
 .style-3 {
-    .team-member-1 {
+    .wiztm-team-member {
         border-radius: 0;
         overflow: hidden;
         background: linear-gradient(135deg, #8B5CF6, #D946EF);
@@ -211,13 +211,13 @@
             z-index: 1;
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 100%;
             height: 200px;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             padding: 1.5rem;
             flex: 1;
             display: flex;
@@ -226,19 +226,19 @@
             z-index: 2;
         }
 
-        .member-role-1 {
+        .wiztm-team-role {
             color: rgba(255, 255, 255, 0.8);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.75rem;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             font-size: 1.5rem;
             font-weight: 700;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             a {
                 color: white;
                 margin-right: 1rem;
@@ -261,7 +261,7 @@
 
 /* Style 4: Layered Depth Card with Square Accent */
 .style-4 {
-    .team-member-1 {
+    .wiztm-team-member {
         background-color: #1A1F2C;
         color: white;
         border-radius: 0;
@@ -279,7 +279,7 @@
             box-shadow: 0px 0px 0 #0EA5E9;
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             // width: calc(100% + 3rem);
             height: 220px;
             // margin: -1.5rem -1.5rem 1.5rem -1.5rem;
@@ -287,18 +287,18 @@
             border-bottom: 3px solid #0EA5E9;
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             flex: 1;
         }
 
-        .member-role-1 {
+        .wiztm-team-role {
             color: #0EA5E9;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             &::after {
                 content: '';
                 display: block;
@@ -309,7 +309,7 @@
             }
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             margin-top: 1.5rem;
 
             a {
@@ -328,7 +328,7 @@
 
 /* Style 5: Split Design with Diagonal Gradient */
 .style-5 {
-    .team-member-1 {
+    .wiztm-team-member {
         padding: 0;
         border-radius: 16px;
         overflow: hidden;
@@ -344,7 +344,7 @@
             transform: translateY(-10px);
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 100%;
             height: 220px;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -356,20 +356,20 @@
             }
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             padding: 2rem;
             background-color: transparent;
             flex: 1;
             position: relative;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             font-size: 1.5rem;
             position: relative;
             display: inline-block;
         }
 
-        .member-name-1::after {
+        .wiztm-team-name::after {
             content: '';
             position: absolute;
             left: 0;
@@ -379,7 +379,7 @@
             background: linear-gradient(90deg, #0EA5E9, #22D3EE);
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             padding-top: 1.5rem;
             margin-top: auto;
 
@@ -405,7 +405,7 @@
 
 /* Style 6: Modern Glass Morphism */
 .style-6 {
-    .team-member-1 {
+    .wiztm-team-member {
         position: relative;
         overflow: hidden;
         border-radius: 20px;
@@ -427,17 +427,17 @@
         }
 
         &:hover {
-            .member-image-1 {
+            .wiztm-team-image {
                 transform: scale(1.05);
             }
 
-            .member-info-1 {
+            .wiztm-team-info {
                 transform: translateY(-10px);
             }
         }
 
 
-        .member-image-1 {
+        .wiztm-team-image {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -446,7 +446,7 @@
             z-index: 1;
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -460,17 +460,17 @@
             transition: transform 0.3s;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             font-size: 1.5rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .member-role-1 {
+        .wiztm-team-role {
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             a {
                 color: white;
                 margin-right: 1rem;
@@ -491,7 +491,7 @@
 
 /* Style 7: Futuristic Card with Dynamic Border */
 .style-7 {
-    .team-member-1 {
+    .wiztm-team-member {
         background-color: white;
         border-radius: 12px;
         overflow: hidden;
@@ -532,37 +532,37 @@
             transform: translateY(-10px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
 
-            .member-image-1 {
+            .wiztm-team-image {
                 transform: scale(1.05);
             }
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 100%;
             height: 220px;
             transition: transform 0.5s;
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             padding: 1.75rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             font-size: 1.5rem;
             background: linear-gradient(90deg, #F97316, #0EA5E9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .member-role-1 {
+        .wiztm-team-role {
             font-weight: 600;
             color: #64748B;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             margin-top: auto;
             padding-top: 1.5rem;
             border-top: 1px solid #F1F5F9;
@@ -586,7 +586,7 @@
 
 /* Style 8: Dynamic Hexagon Shape with Bold Angles */
 .style-8 {
-    .team-member-1 {
+    .wiztm-team-member {
         background-color: white;
         overflow: visible;
         height: 100%;
@@ -601,7 +601,7 @@
             transform: scale(1.03);
         }
 
-        .member-image-1 {
+        .wiztm-team-image {
             width: 100%;
             height: 200px;
             clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
@@ -609,19 +609,19 @@
         }
 
         &:hover {
-            .member-image-1 {
+            .wiztm-team-image {
                 filter: saturate(1.2);
             }
         }
 
-        .member-info-1 {
+        .wiztm-team-info {
             padding: 1.75rem;
             flex: 1;
             background: white;
             z-index: 1;
         }
 
-        .member-name-1 {
+        .wiztm-team-name {
             color: #1E293B;
             font-size: 1.5rem;
             position: relative;
@@ -638,7 +638,7 @@
             }
         }
 
-        .member-role-1 {
+        .wiztm-team-role {
             color: #7E69AB;
             font-weight: 600;
             text-transform: uppercase;
@@ -646,7 +646,7 @@
             font-size: 0.75rem;
         }
 
-        .social-links-1 {
+        .wiztm-team-social {
             margin-top: 1.5rem;
 
             a {
@@ -668,7 +668,7 @@
 
 
 /* Style 9: Abstract Shapes with Vibrant Gradients */
-.team-member-1.style9 {
+.wiztm-team-member.style9 {
     border-radius: 20px;
     background-color: white;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
@@ -680,7 +680,7 @@
     z-index: 1;
 }
 
-.team-member-1.style9::before {
+.wiztm-team-member.style9::before {
     content: "";
     position: absolute;
     top: -100px;
@@ -692,7 +692,7 @@
     z-index: -1;
 }
 
-.team-member-1.style9::after {
+.wiztm-team-member.style9::after {
     content: "";
     position: absolute;
     bottom: -50px;
@@ -705,49 +705,49 @@
     z-index: -1;
 }
 
-.team-member-1.style9 .member-image-1 {
+.wiztm-team-member.style9 .wiztm-team-image {
     width: 100%;
     height: 220px;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     transition: transform 0.4s;
 }
 
-.team-member-1.style9:hover .member-image-1 {
+.wiztm-team-member.style9:hover .wiztm-team-image {
     transform: scale(1.05);
 }
 
-.team-member-1.style9 .member-info-1 {
+.wiztm-team-member.style9 .wiztm-team-info {
     padding: 2rem;
     flex: 1;
     position: relative;
 }
 
-.team-member-1.style9 .member-name-1 {
+.wiztm-team-member.style9 .wiztm-team-name {
     font-size: 1.5rem;
     background: linear-gradient(90deg, #D946EF, #8B5CF6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.team-member-1.style9 .member-role-1 {
+.wiztm-team-member.style9 .wiztm-team-role {
     color: #0EA5E9;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-.team-member-1.style9 .social-links-1 {
+.wiztm-team-member.style9 .wiztm-team-social {
     margin-right: 1.25rem;
     color: #8B5CF6;
     transition: transform 0.3s, color 0.3s;
 }
 
-.team-member-1.style9 .social-links-1:hover {
+.wiztm-team-member.style9 .wiztm-team-social:hover {
     color: #D946EF;
     transform: rotate(15deg) scale(1.2);
 }
 
 /* Style 10: Ultra Modern Minimalist with 3D Effect */
-.team-member-1.style10 {
+.wiztm-team-member.style10 {
     border-radius: 0;
     overflow: hidden;
     background: white;
@@ -760,11 +760,11 @@
     transition: transform 0.3s;
 }
 
-.team-member-1.style10:hover {
+.wiztm-team-member.style10:hover {
     transform: translateY(-10px);
 }
 
-.team-member-1.style10 .member-image-1 {
+.wiztm-team-member.style10 .wiztm-team-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -778,7 +778,7 @@
     z-index: 1;
 }
 
-.team-member-1.style10 .member-info-1 {
+.wiztm-team-member.style10 .wiztm-team-info {
     padding: 2rem 2rem 2rem 10rem;
     display: flex;
     flex-direction: column;
@@ -787,13 +787,13 @@
     background: linear-gradient(to right, rgba(249, 115, 22, 0.05) 0%, rgba(217, 70, 239, 0.05) 100%);
 }
 
-.team-member-1.style10 .member-name-1 {
+.wiztm-team-member.style10 .wiztm-team-name {
     font-size: 1.5rem;
     margin-top: 1rem;
     color: #1E293B;
 }
 
-.team-member-1.style10 .member-role-1 {
+.wiztm-team-member.style10 .wiztm-team-role {
     display: inline-block;
     background: linear-gradient(45deg, #F97316, #D946EF);
     color: white;
@@ -806,13 +806,13 @@
     margin-bottom: 1.5rem;
 }
 
-.team-member-1.style10 .social-links-1 {
+.wiztm-team-member.style10 .wiztm-team-social {
     margin-top: auto;
     border-top: 1px solid #E2E8F0;
     padding-top: 1.5rem;
 }
 
-.team-member-1.style10 .social-links-1 {
+.wiztm-team-member.style10 .wiztm-team-social {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -826,7 +826,7 @@
     transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
-.team-member-1.style10 .social-links-1:hover {
+.wiztm-team-member.style10 .wiztm-team-social:hover {
     transform: translateY(-5px);
     box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.1);
     color: #F97316;
@@ -838,18 +838,18 @@
         margin-bottom: 2rem;
     }
 
-    .team-member-1 {
+    .wiztm-team-member {
         height: 400px;
     }
 
-    .team-member-1.style10 .member-image-1 {
+    .wiztm-team-member.style10 .wiztm-team-image {
         width: 100px;
         height: 100px;
         top: 1.5rem;
         left: 1.5rem;
     }
 
-    .team-member-1.style10 .member-info-1 {
+    .wiztm-team-member.style10 .wiztm-team-info {
         padding: 1.5rem 1.5rem 1.5rem 8rem;
     }
 }

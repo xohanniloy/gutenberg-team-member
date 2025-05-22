@@ -1,21 +1,6 @@
-/**
- * WordPress dependencies
- */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
-const { Fragment, useEffect } = wp.element;
-
-// editor style
-import './editor.scss';
-
-/**
- * Internal dependencies
- */
-import Inspector from './inspector';
-import { softMinifyCssStrings } from '../../helper/softminify';
-import './style.scss';
+import { useEffect } from '@wordpress/element';
 import * as Constants from './constants';
-import { __ } from '@wordpress/i18n';
-import icons from '../../options/icons';
+import { softMinifyCssStrings } from '../../helper/softminify';
 
 const {
 	CUSTOM_CONTAINER_WIDTH,
@@ -56,11 +41,12 @@ const {
 	WRAPPER_BORDER_RADIUS_LEFT,
 } = Constants;
 
-// Edit Function
-export default function Edit({ attributes, setAttributes, clientId }) {
+function controlStyle({ attributes, setAttributes, clientId }) {
 	const {
+		
+	style,
+
 		uniqueId,
-		style,
 		blockStyle,
 		titleColor,
 		titleBgColor,
@@ -80,7 +66,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		itemBgHoverColor,
 		itemBgOverlayColor,
 		items,
-		titleTag,
 		containerWidth,
 		titleTypography,
 		descTypography,
@@ -112,7 +97,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		bgRepeat,
 		bgSize,
 	} = attributes;
-
 	const stylesToShowPanelFor = [
 		'style-1',
 		'style-3',
@@ -254,7 +238,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		titleTypography.letterSpacing ||
 		titleTypography.wordSpacing
 			? `
-		.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+		.${uniqueId} .wiztm-team-name {
 			${cssStyles}
 		}
   			`
@@ -324,7 +308,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	// unique id
 	useEffect(() => {
 		setAttributes({
-			uniqueId: `bwdssb-service-blocks-${clientId.slice(0, 8)}`,
+			uniqueId: `wiztm-team-blocks-${clientId.slice(0, 8)}`,
 		});
 	}, [clientId]);
 
@@ -865,62 +849,35 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			}),
 	};
 	const responsiveDesktopCSS = `
-            .${uniqueId}.wp-block.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block.wp-block-wiztm-team-member {
                 opacity: ${hideOnDesktop ? '0.4' : '1'};
                 display: ${hideOnDesktop ? 'block' : 'inherit'};
             }
-            .${uniqueId}.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block-wiztm-team-member {
                 display: ${hideOnDesktop ? 'none' : 'inherit'};
             }
         `;
 	const responsiveTabCSS = `
-            .${uniqueId}.wp-block.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block.wp-block-wiztm-team-member {
                 opacity: ${hideOnTablet ? '0.4' : '1'};
                 display: ${hideOnTablet ? 'block' : 'inherit'};
             }
-            .${uniqueId}.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block-wiztm-team-member {
                 display: ${hideOnTablet ? 'none' : 'inherit'};
             }
         `;
 	const responsiveMobileCSS = `
-            .${uniqueId}.wp-block.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block.wp-block-wiztm-team-member {
                 opacity: ${hideOnMobile ? '0.4' : '1'};
                 display: ${hideOnMobile ? 'block' : 'inherit'};
             }
-            .${uniqueId}.wp-block-bwdssb-service-showcase {
+            .${uniqueId}.wp-block-wiztm-team-member {
                 display: ${hideOnMobile ? 'none' : 'inherit'};
             }
         `;
 	const deskStyles = `
 
-		${
-			deskContainerWidth !== undefined && deskContainerWidth !== ''
-				? `.${uniqueId}.wp-block-bwdssb-service-showcase.custom-width {
-						max-width: ${deskContainerWidth}${containerWidthUnit}
-					}`
-				: ' '
-		}
-		${
-			deskCols !== undefined && deskCols !== ''
-				? `.${uniqueId} .bwdssb-service-item-wrapper {
-						grid-template-columns: repeat(${deskCols}, 1fr);
-					}`
-				: ' '
-		}
-		${
-			deskGap !== undefined && deskGap !== ''
-				? `.${uniqueId} .bwdssb-service-item-wrapper {
-						grid-column-gap: ${deskGap}${gapUnit};
-					}`
-				: ' '
-		}
-		${
-			deskRowGap !== undefined && deskRowGap !== ''
-				? `.${uniqueId} .bwdssb-service-item-wrapper {
-						grid-row-gap: ${deskRowGap}${gapRowUnit};
-					}`
-				: ' '
-		}
+	
 		${
 			Object.keys(itemDeskStyles).length > 0
 				? `.${uniqueId} .bwdssb-service-item-wrapper .bwdssb-service-item { ${convertToCss(
@@ -952,15 +909,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			}`
 				: ' '
 		}
-		.${uniqueId} .bdt-image-wrap,
-		.${uniqueId} .bdt-info-wrap,
-		.${uniqueId} .wp-block-bdt-service-member-item .bdt-hover-content .bdt-social-share{
-			text-align: ${textAlign};
-			justify-content: ${textAlign};
-		}
 		${
 			deskTitleFont !== undefined && deskTitleFont !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 					font-size: ${deskTitleFont}${titleFontUnit};
 				}`
 				: ' '
@@ -971,14 +922,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		
 		${
 			titleColor !== undefined && titleColor !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				color: ${titleColor};
 			}`
 				: ' '
 		}
 		${
 			stylesTitle.includes(style)
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				background: ${titleBgColor};
 			}`
 				: ' '
@@ -986,28 +937,28 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		${responsiveDesktopCSS}
 		${
 			titleHoverColor !== undefined && titleHoverColor !== ''
-				? `.${uniqueId} .bwdssb-service-item:hover .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name:hover {
 				color: ${titleHoverColor};
 			}`
 				: ' '
 		}
 		${
 			nameAlign !== undefined && nameAlign !== ''
-				? `.${uniqueId} .bwdssb-service-item .bwdssb-service-name {
+				? `.${uniqueId} .wiztm-team-name {
 				text-align: ${nameAlign};
 			}`
 				: ' '
 		}
 		${
 			deskTitleMarginTop !== undefined && deskTitleMarginTop !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-top: ${deskTitleMarginTop}${titleMarginTopUnit};
 			}`
 				: ' '
 		}
 		${
 			deskTitleMarginBottom !== undefined && deskTitleMarginBottom !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-bottom: ${deskTitleMarginBottom}${titleMarginBottomUnit};
 			}`
 				: ' '
@@ -1250,14 +1201,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		${wrapperShadow}
 		${
 			mainWrapperBgColor !== undefined && mainWrapperBgColor !== ''
-				? `.${uniqueId}.wp-block-bwdssb-service-showcase {
+				? `.${uniqueId}.wp-block-wiztm-team-member {
 				background: ${mainWrapperBgColor};
 			}`
 				: ' '
 		}
 		${
 			zIndex !== undefined && zIndex !== ''
-				? `.${uniqueId}.wp-block-bwdssb-service-showcase {
+				? `.${uniqueId}.wp-block-wiztm-team-member {
 				z-index: ${zIndex};
 			}`
 				: ' '
@@ -1270,7 +1221,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabStyles = `
 		${
 			tabContainerWidth !== undefined && tabContainerWidth !== ''
-				? `.${uniqueId}.wp-block-bwdssb-service-showcase.custom-width {
+				? `.${uniqueId}.wp-block-wiztm-team-member.custom-width {
 						max-width: ${tabContainerWidth}${containerWidthUnit}
 					}`
 				: ' '
@@ -1313,21 +1264,21 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		${
 			tabTitleFont !== undefined && tabTitleFont !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 					font-size: ${tabTitleFont}${titleFontUnit};
 				}`
 				: ' '
 		}
 		${
 			tabTitleMarginTop !== undefined && tabTitleMarginTop !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-top: ${tabTitleMarginTop}${titleMarginTopUnit};
 			}`
 				: ' '
 		}
 		${
 			tabTitleMarginBottom !== undefined && tabTitleMarginBottom !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-bottom: ${tabTitleMarginBottom}${titleMarginBottomUnit};
 			}`
 				: ' '
@@ -1403,7 +1354,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const mobStyles = `
 		${
 			mobContainerWidth !== undefined && mobContainerWidth !== ''
-				? `.${uniqueId}.wp-block-bwdssb-service-showcase.custom-width {
+				? `.${uniqueId}.wp-block-wiztm-team-member.custom-width {
 						max-width: ${mobContainerWidth}${containerWidthUnit}
 					}`
 				: ' '
@@ -1446,21 +1397,21 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		${
 			mobTitleFont !== undefined && mobTitleFont !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 					font-size: ${mobTitleFont}${titleFontUnit};
 				}`
 				: ' '
 		}
 		${
 			mobTitleMarginTop !== undefined && mobTitleMarginTop !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-top: ${mobTitleMarginTop}${titleMarginTopUnit};
 			}`
 				: ' '
 		}
 		${
 			mobTitleMarginBottom !== undefined && mobTitleMarginBottom !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-title {
+				? `.${uniqueId} .wiztm-team-name {
 				margin-bottom: ${mobTitleMarginBottom}${titleMarginBottomUnit};
 			}`
 				: ' '
@@ -1533,7 +1484,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				: ' '
 		}
 	`;
-
 	/**
 	 * Block All Styles
 	 */
@@ -1553,187 +1503,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			setAttributes({ blockStyle: blockStyleCss });
 		}
 	}, [attributes]);
-
-	return (
-		<Fragment>
-			
-			<Inspector attributes={attributes} setAttributes={setAttributes} />
-			<div
-				{...useBlockProps({
-					className: `${uniqueId} ${style} ${containerWidth} ${additionalClass}`,
-				})}
-			>
-				<div
-					className="bwdssb-service-item-wrapper"
-					style={imageStyle}
-					{...(id ? { id } : {})}
-				>
-					{items &&
-						items.map((item, index) => (
-							<div
-								key={index}
-								className="bwdssb-service-item bwdssb-bgColor"
-							>
-								{item.showLink ? (
-									<a
-										href={item.boxLink}
-										target={item.newTab ? '_blank' : ''}
-										rel="noreferrer noopener"
-									>
-										<div className="content-wrap">
-											<div className="service-icon-media">
-												{item.chooseMedia ===
-													'icon' && (
-													<div className="service-icon">
-														{
-															icons[
-																item.icon ||
-																	'gear'
-															]
-														}
-													</div>
-												)}
-												{item.chooseMedia === 'image' &&
-													item.imageUrl && (
-														<img
-															src={
-																item.imageUrl
-																	.url
-															}
-															alt={item.text1}
-														/>
-													)}
-												{item.chooseMedia === 'svg' &&
-													item.svgContent && (
-														<div>
-															<div
-																dangerouslySetInnerHTML={{
-																	__html: item.svgContent,
-																}}
-															/>
-														</div>
-													)}
-												{item.chooseMedia ===
-													'lottie' &&
-													item.lottieUrl && (
-														<iframe
-															src={item.lottieUrl}
-															title="Lottie Animation Preview"
-															width="100%"
-															height="200"
-															frameBorder="0"
-															allowFullScreen
-														/>
-													)}
-											</div>
-											<RichText
-												tagName={titleTag}
-												className="service-title"
-												value={item.title}
-												onChange={(newText) =>
-													updateItemText(
-														index,
-														'title',
-														newText
-													)
-												}
-												placeholder={__(
-													'Write title……',
-													'bwdssb-service-showcase'
-												)}
-											/>
-											<RichText
-												tagName="p"
-												className="service-description"
-												value={item.description}
-												onChange={(newText) =>
-													updateItemText(
-														index,
-														'description',
-														newText
-													)
-												}
-												placeholder={__(
-													'Write description……',
-													'bwdssb-service-showcase'
-												)}
-											/>
-										</div>
-									</a>
-								) : (
-									<div className="content-wrap">
-										<div className="service-icon-media">
-											{item.chooseMedia === 'icon' && (
-												<div className="service-icon">
-													{icons[item.icon || 'gear']}
-												</div>
-											)}
-											{item.chooseMedia === 'image' &&
-												item.imageUrl && (
-													<img
-														src={item.imageUrl.url}
-														alt={item.text1}
-													/>
-												)}
-											{item.chooseMedia === 'svg' &&
-												item.svgContent && (
-													<div
-														className="svg-content"
-														dangerouslySetInnerHTML={{
-															__html: item.svgContent,
-														}}
-													/>
-												)}
-											{item.chooseMedia === 'lottie' &&
-												item.lottieUrl && (
-													<iframe
-														src={item.lottieUrl}
-														title="Lottie Animation Preview"
-														width="100%"
-														height="200"
-														frameBorder="0"
-														allowFullScreen
-													/>
-												)}
-										</div>
-										<RichText
-											tagName={titleTag}
-											className="service-title"
-											value={item.title}
-											onChange={(newText) =>
-												updateItemText(
-													index,
-													'title',
-													newText
-												)
-											}
-											placeholder={__(
-												'Write title……',
-												'bwdssb-service-showcase'
-											)}
-										/>
-										<RichText
-											tagName="p"
-											className="service-description"
-											value={item.description}
-											onChange={(newText) =>
-												updateItemText(
-													index,
-													'description',
-													newText
-												)
-											}
-											placeholder={__(
-												'Write description……',
-												'bwdssb-service-showcase'
-											)}
-										/>
-									</div>
-								)}
-							</div>
-						))}
-				</div>
-			</div>
-		</Fragment>
-	);
+	return(
+        <style>{`${softMinifyCssStrings(blockStyleCss)}`}</style>
+    );
 }
+
+export default controlStyle;

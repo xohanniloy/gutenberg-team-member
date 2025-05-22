@@ -240,14 +240,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'Layout Style',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={true}
 										>
 											<SelectControl
 												label={__(
 													'Select Layout Style',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												value={style}
 												options={SelectStyle}
@@ -338,7 +338,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 																		<span>
 																			{__(
 																				'Click to Upload Image',
-																				'widtm-team-member'
+																				'wiztm-team-member'
 																			)}
 																		</span>
 																	</Button>
@@ -407,73 +407,78 @@ const Inspector = ({ attributes, setAttributes }) => {
 													'wiztm-team-member'
 												)}
 											/>
-												{icons &&
-													icons.map((icon, index) => (
-														<div key={index} className='wiztm-icons-repeater-item'>
-															<PanelBody
-																title={__(
-																	`Icon ${
-																		index +
-																		1
-																	}`,
-																	'wiztm-team-member'
+											{icons &&
+												icons.map((icon, index) => (
+													<div
+														key={index}
+														className="wiztm-icons-repeater-item"
+													>
+														<PanelBody
+															title={__(
+																`Icon ${
+																	index + 1
+																}`,
+																'wiztm-team-member'
+															)}
+															initialOpen={false}
+														>
+															<IconPicker
+																label={__(
+																	'Icon',
+																	'bwdssb-service-showcase'
 																)}
-																initialOpen={
-																	false
+																selectedIcon={
+																	icons[index]
+																		.icons
 																}
-															>
-																<IconPicker
-																	label={__(
-																		'Icon',
-																		'bwdssb-service-showcase'
-																	)}
-																	selectedIcon={
-																		icons[index].icons
-																	}
-																	changeIcon={(
-																		newIcon
-																	) =>
-																		setAttributes(
-																			{
-																				icons: icons.map(
-																					( icon, i ) =>
-																						i === index
-																							? {
-																									...icon,
-																									icons: newIcon,
-																							  }
-																							: icon
-																				),
-																			}
-																		)
-																	}
-																/>
-															</PanelBody>
-														</div>
-													))}
+																changeIcon={(
+																	newIcon
+																) =>
+																	setAttributes(
+																		{
+																			icons: icons.map(
+																				(
+																					icon,
+																					i
+																				) =>
+																					i ===
+																					index
+																						? {
+																								...icon,
+																								icons: newIcon,
+																						  }
+																						: icon
+																			),
+																		}
+																	)
+																}
+															/>
+														</PanelBody>
+													</div>
+												))}
 
-												<Button
-													className="team-add-item"
-													onClick={() =>
-														setAttributes({
-															icons: [
-																...icons,
-																{
-																	id:
-																		icons.length +
-																		1,
-																	icons: '',
-																},
-															],
-														})
-													}
-												>
-													<i className="fas fa-plus"></i>
-													{__(
-														'Add Icon',
-														'wiztm-team-member'
-													)}
-												</Button>
+											<Button
+												className="team-add-item"
+												onClick={() =>
+													setAttributes({
+														icons: [
+															...icons,
+															{
+																id:
+																	icons.length +
+																	1,
+																icons: '',
+															},
+														],
+													})
+												}
+											>
+												<i className="fas fa-plus"></i>
+												{__(
+													'Add Icon',
+													'wiztm-team-member'
+												)}
+											</Button>
 										</PanelBody>
 									</div>
 								</Fragment>
@@ -487,13 +492,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 							components: (
 								<Fragment>
 									<PanelBody
-										title={__('Title', 'widtm-team-member')}
+										title={__('Title', 'wiztm-team-member')}
 										initialOpen={false}
 									>
+										
 										<ColorControl
 											label={__(
 												'Color',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											color={titleColor}
 											colorName="titleColor"
@@ -502,7 +508,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ColorControl
 											label={__(
 												'Hover Color',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											color={titleHoverColor}
 											colorName="titleHoverColor"
@@ -512,7 +518,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={titleBgColor}
 												colorName="titleBgColor"
@@ -522,27 +528,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResRangleControl
 											label={__(
 												'Font Size',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={TITLE_FONT_SIZE}
 											objAttrs={objAttrs}
 											noUnits={false}
 											min={1}
 											max={100}
-										/>
-										<MyTypographyControl
-											label={__(
-												'Typography',
-												'widtm-team-member'
-											)}
-											typography={titleTypography}
-											onChange={(value) => {
-												setAttributes({
-													titleTypography: value,
-												});
-											}}
-											attribute={attributes}
-											setAttributes={setAttributes}
 										/>
 										<CardDivider />
 										<Alignment
@@ -558,7 +550,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResRangleControl
 											label={__(
 												'Margin Top',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={TITLE_MARGIN_TOP}
 											objAttrs={objAttrs}
@@ -569,7 +561,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResRangleControl
 											label={__(
 												'Margin Bottom',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={TITLE_MARGIN_BOTTOM}
 											objAttrs={objAttrs}
@@ -581,14 +573,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Description',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<ColorControl
 											label={__(
 												'Color',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											color={descriptionColor}
 											colorName="descriptionColor"
@@ -597,7 +589,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ColorControl
 											label={__(
 												'Hover Color',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											color={designationHoverColor}
 											colorName="designationHoverColor"
@@ -606,7 +598,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResRangleControl
 											label={__(
 												'Font Size',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={DESG_FONT_SIZE}
 											objAttrs={objAttrs}
@@ -617,7 +609,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<MyTypographyControl
 											label={__(
 												'Typography',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											typography={descTypography}
 											onChange={(newTypography) => {
@@ -643,14 +635,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'Icon',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={false}
 										>
 											<ColorControl
 												label={__(
 													'Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconColor}
 												colorName="iconColor"
@@ -659,7 +651,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconHoverColor}
 												colorName="iconHoverColor"
@@ -668,7 +660,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgNormalColor}
 												colorName="iconBgNormalColor"
@@ -677,7 +669,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgHoverColor}
 												colorName="iconBgHoverColor"
@@ -686,7 +678,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'Icon Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={ICON_SIZE}
 												objAttrs={objAttrs}
@@ -697,7 +689,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'Icon Round Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={ICON_ROUND_SIZE}
 												objAttrs={objAttrs}
@@ -708,7 +700,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResDimensionControl
 												label={__(
 													'Border Radius',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={iconBorderRadius}
 												objAttrs={objAttrs}
@@ -719,7 +711,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<BoxShadowControl
 												label={__(
 													'Box Shadow',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												values={boxShadowIcon}
 												onChange={(newSettings) =>
@@ -745,14 +737,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'Image',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={false}
 										>
 											<ResRangleControl
 												label={__(
 													'Image Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={IMAGE_SIZE}
 												objAttrs={objAttrs}
@@ -763,7 +755,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgNormalColor}
 												colorName="iconBgNormalColor"
@@ -772,7 +764,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgHoverColor}
 												colorName="iconBgHoverColor"
@@ -781,7 +773,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'Image Round Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={ICON_ROUND_SIZE}
 												objAttrs={objAttrs}
@@ -792,7 +784,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResDimensionControl
 												label={__(
 													'Border Radius',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={iconBorderRadius}
 												objAttrs={objAttrs}
@@ -803,7 +795,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<BoxShadowControl
 												label={__(
 													'Box Shadow',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												values={boxShadowIcon}
 												onChange={(newSettings) =>
@@ -819,14 +811,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'SVG',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={false}
 										>
 											<ColorControl
 												label={__(
 													'Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={svgColor}
 												colorName="svgColor"
@@ -835,7 +827,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={svgHoverColor}
 												colorName="svgHoverColor"
@@ -844,7 +836,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgNormalColor}
 												colorName="iconBgNormalColor"
@@ -853,7 +845,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgHoverColor}
 												colorName="iconBgHoverColor"
@@ -862,7 +854,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'SVG Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={SVG_SIZE}
 												objAttrs={objAttrs}
@@ -873,7 +865,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'SVG Round Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={ICON_ROUND_SIZE}
 												objAttrs={objAttrs}
@@ -884,7 +876,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResDimensionControl
 												label={__(
 													'Border Radius',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={iconBorderRadius}
 												objAttrs={objAttrs}
@@ -895,7 +887,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<BoxShadowControl
 												label={__(
 													'Box Shadow',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												values={boxShadowIcon}
 												onChange={(newSettings) =>
@@ -921,14 +913,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'Lottie',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={false}
 										>
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgNormalColor}
 												colorName="iconBgNormalColor"
@@ -937,7 +929,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ColorControl
 												label={__(
 													'Hover Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={iconBgHoverColor}
 												colorName="iconBgHoverColor"
@@ -946,7 +938,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResRangleControl
 												label={__(
 													'Lottie Round Size',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={ICON_ROUND_SIZE}
 												objAttrs={objAttrs}
@@ -957,7 +949,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ResDimensionControl
 												label={__(
 													'Border Radius',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												controlName={iconBorderRadius}
 												objAttrs={objAttrs}
@@ -968,7 +960,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<BoxShadowControl
 												label={__(
 													'Box Shadow',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												values={boxShadowIcon}
 												onChange={(newSettings) =>
@@ -994,14 +986,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<PanelBody
 											title={__(
 												'Content Wrapper',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											initialOpen={false}
 										>
 											<ColorControl
 												label={__(
 													'Background Color',
-													'widtm-team-member'
+													'wiztm-team-member'
 												)}
 												color={contentWrapperBg}
 												colorName="contentWrapperBg"
@@ -1012,7 +1004,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Item Box',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
@@ -1028,7 +1020,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 															<ColorControl
 																label={__(
 																	'Background Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 																color={
 																	itemNormalBg
@@ -1041,13 +1033,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 															<p className="bwd-custom-label">
 																{__(
 																	'Gradient Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 															</p>
 															<GradientPicker
 																label={__(
 																	'Gradient Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 																value={
 																	itemGradientBg
@@ -1114,7 +1106,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 															<ColorControl
 																label={__(
 																	'Background Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 																color={
 																	itemBgHoverColor
@@ -1127,13 +1119,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 															<p className="bwd-custom-label">
 																{__(
 																	'Gradient Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 															</p>
 															<GradientPicker
 																label={__(
 																	'Gradient Color',
-																	'widtm-team-member'
+																	'wiztm-team-member'
 																)}
 																value={
 																	itemGradientHoverBg
@@ -1195,7 +1187,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<CustomBorderControl
 											label={__(
 												'Border',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											values={borderSettings}
 											onChange={(newSettings) =>
@@ -1208,7 +1200,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<BoxShadowControl
 											label={__(
 												'Box Shadow',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											values={boxShadow}
 											onChange={(value) =>
@@ -1220,7 +1212,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResDimensionControl
 											label={__(
 												'Border Radius',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={itemBorderRadius}
 											objAttrs={objAttrs}
@@ -1231,7 +1223,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResDimensionControl
 											label={__(
 												'Padding',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={itemPadding}
 											objAttrs={objAttrs}
@@ -1253,14 +1245,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Margin',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<ResDimensionControl
 											label={__(
 												'Margin',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={marginControl}
 											objAttrs={objAttrs}
@@ -1272,14 +1264,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Padding',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<ResDimensionControl
 											label={__(
 												'Padding',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={paddingControl}
 											objAttrs={objAttrs}
@@ -1291,7 +1283,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Background',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
@@ -1378,14 +1370,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Border & Shadow',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<CustomBorderControl
 											label={__(
 												'Border',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											values={wrapperBorder}
 											onChange={(newSettings) =>
@@ -1398,7 +1390,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<BoxShadowControl
 											label={__(
 												'Box Shadow',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											values={boxShadowWrapper}
 											onChange={(newSettings) =>
@@ -1411,7 +1403,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResDimensionControl
 											label={__(
 												'Border Radius',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											controlName={wrapperBorderRadius}
 											objAttrs={objAttrs}
@@ -1423,14 +1415,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Z-Index',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<TextControl
 											help={__(
 												'Set z-index for the section',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											value={zIndex}
 											onChange={(value) =>
@@ -1479,14 +1471,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Responsive Control',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
 										<ToggleControl
 											label={__(
 												'Hide On Desktop',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											className="bwd-toggle-control"
 											checked={hideOnDesktop}
@@ -1500,7 +1492,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ToggleControl
 											label={__(
 												'Hide On Tablet',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											className="bwd-toggle-control"
 											checked={hideOnTablet}
@@ -1513,7 +1505,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ToggleControl
 											label={__(
 												'Hide On Mobile',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 											className="bwd-toggle-control"
 											checked={hideOnMobile}
@@ -1527,7 +1519,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody
 										title={__(
 											'Custom CSS',
-											'widtm-team-member'
+											'wiztm-team-member'
 										)}
 										initialOpen={false}
 									>
@@ -1536,7 +1528,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											onChange={handleInputChange}
 											placeholder={__(
 												'.service-title { font-size: 15px; }',
-												'widtm-team-member'
+												'wiztm-team-member'
 											)}
 										/>
 									</PanelBody>
