@@ -540,7 +540,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<Alignment
 											label={__(
 												'Alignment',
-												'bdt-review-blocks'
+												'wiztm-team-member'
 											)}
 											attribute={nameAlign}
 											attributeName="nameAlign"
@@ -623,7 +623,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<Alignment
 											label={__(
 												'Alignment',
-												'bdt-review-blocks'
+												'wiztm-team-member'
 											)}
 											attribute={designationAlign}
 											attributeName="designationAlign"
@@ -724,7 +724,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<Alignment
 												label={__(
 													'Alignment',
-													'bdt-review-blocks'
+													'wiztm-team-member'
 												)}
 												attribute={iconAlign}
 												attributeName="iconAlign"
@@ -900,7 +900,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<Alignment
 												label={__(
 													'Alignment',
-													'bdt-review-blocks'
+													'wiztm-team-member'
 												)}
 												attribute={iconAlign}
 												attributeName="iconAlign"
@@ -973,7 +973,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<Alignment
 												label={__(
 													'Alignment',
-													'bdt-review-blocks'
+													'wiztm-team-member'
 												)}
 												attribute={iconAlign}
 												attributeName="iconAlign"

@@ -43,8 +43,7 @@ const {
 
 function controlStyle({ attributes, setAttributes, clientId }) {
 	const {
-		
-	style,
+		style,
 
 		uniqueId,
 		blockStyle,
@@ -290,7 +289,7 @@ function controlStyle({ attributes, setAttributes, clientId }) {
 		descTypography.letterSpacing ||
 		descTypography.wordSpacing
 			? `
-		.${uniqueId} .bwdssb-service-item .bwdssb-content-wrap .bwdssb-service-designation {
+		.${uniqueId} .wiztm-team-bio {
 			${descStyles}
 		}
   			`
@@ -917,8 +916,6 @@ function controlStyle({ attributes, setAttributes, clientId }) {
 				: ' '
 		}		
 		 ${nameBlock}
-	
-		
 		
 		${
 			titleColor !== undefined && titleColor !== ''
@@ -965,21 +962,21 @@ function controlStyle({ attributes, setAttributes, clientId }) {
 		}
 		${
 			descriptionColor !== undefined && descriptionColor !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-description {
+				? `.${uniqueId} .wiztm-team-bio {
 				color: ${descriptionColor};
 			}`
 				: ' '
 		}
 		${
 			designationHoverColor !== undefined && designationHoverColor !== ''
-				? `.${uniqueId} .bwdssb-service-item:hover .content-wrap .service-description {
+				? `.${uniqueId} .wiztm-team-bio:hover {
 				color: ${designationHoverColor};
 			}`
 				: ' '
 		}
 		${
 			deskDesgFont !== undefined && deskDesgFont !== ''
-				? `.${uniqueId} .bwdssb-service-item .content-wrap .service-description {
+				? `.${uniqueId} .wiztm-team-bio {
 				font-size: ${deskDesgFont}${desgFontUnit};
 			}`
 				: ' '
@@ -988,7 +985,7 @@ function controlStyle({ attributes, setAttributes, clientId }) {
 		${desgBlock}
 		${
 			designationAlign !== undefined && designationAlign !== ''
-				? `.${uniqueId} .bwdssb-service-item .bwdssb-service-designation {
+				? `.${uniqueId} .wiztm-team-bio {
 				text-align: ${designationAlign};
 			}`
 				: ' '
@@ -1503,9 +1500,7 @@ function controlStyle({ attributes, setAttributes, clientId }) {
 			setAttributes({ blockStyle: blockStyleCss });
 		}
 	}, [attributes]);
-	return(
-        <style>{`${softMinifyCssStrings(blockStyleCss)}`}</style>
-    );
+	return <style>{`${softMinifyCssStrings(blockStyleCss)}`}</style>;
 }
 
 export default controlStyle;
