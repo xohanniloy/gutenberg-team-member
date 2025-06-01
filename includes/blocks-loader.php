@@ -97,7 +97,10 @@ class BWDSSB_SERVICE_SHOWCASE_BLOCKS_LOADER {
         if ( !empty( $bwdssb_service_showcase_blocks ) && is_array( $bwdssb_service_showcase_blocks ) ) {
             foreach ( $bwdssb_service_showcase_blocks as $block ) {
                 register_block_type(
-                    BWDSSB_SERVICE_SHOWCASE_DIR_PATH . './build/blocks/' . $block['name']
+                    BWDSSB_SERVICE_SHOWCASE_DIR_PATH . './build/blocks/' . $block['name'],
+                    [
+                        'render_callback' => [ $this, 'bwdcv_cv_builder_render_callback' ],
+                    ]
                 );
             }
         }

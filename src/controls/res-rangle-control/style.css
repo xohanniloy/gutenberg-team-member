@@ -1,0 +1,115 @@
+.service-res-rangle-control .service-resicon-unit-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.service-res-rangle-control .bwd-res-controls .bwd-single-rangle {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.service-res-rangle-control .bwd-res-controls .bwd-single-rangle .reset-icon {
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.6);
+  background: #dcf7f8;
+  font-weight: 300;
+  cursor: pointer;
+}
+.service-res-rangle-control .bwd-res-controls .components-range-control {
+  width: 100%;
+}
+.service-res-rangle-control .bwd-res-controls .components-range-control .components-range-control__wrapper {
+  width: 100% !important;
+}
+.service-res-rangle-control .bwd-res-controls .components-range-control .components-range-control__number .components-base-control__field .components-input-base {
+  align-items: center;
+}
+.service-res-rangle-control .bwd-res-controls .components-range-control .components-range-control__number .components-base-control__field .components-input-base .components-input-control__container {
+  flex: unset !important;
+}
+.service-res-rangle-control .bwd-res-btn {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.service-res-rangle-control .bwd-res-btn .components-button {
+  justify-content: center;
+  min-width: 36px;
+  padding: 0px;
+  height: 16px;
+  min-width: 1px;
+  width: 20px;
+  background: #fff;
+  color: #9b9a9a;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+.service-res-rangle-control .bwd-res-btn .components-button span {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+}
+.service-res-rangle-control .bwd-res-btn .components-button:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #000;
+}
+.service-res-rangle-control .bwd-res-btn .components-button.is-primary {
+  color: #000;
+  background: rgba(0, 226, 255, 0.3294117647);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.service-res-rangle-control .bwd-res-btn .components-button.is-primary:focus:not(:disabled) {
+  box-shadow: none;
+}
+.service-res-rangle-control .bwd-res-btn .components-button.is-primary:active:not(:disabled) {
+  background-color: #ddd;
+  color: #000;
+  border: none;
+}
+.service-res-rangle-control .bwd-res-btn .components-button.is-secondary {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.service-res-rangle-control .bwd-res-btn .components-button.is-secondary:hover:not(:disabled) {
+  box-shadow: none;
+}
+.service-res-rangle-control .units-wrapper .components-button {
+  padding-bottom: 2px;
+  font-size: 11px;
+  height: 15px;
+  padding: 0 3px 2px;
+}
+.service-res-rangle-control .units-wrapper .components-button.is-secondary {
+  box-shadow: none;
+}
+.service-res-rangle-control .units-wrapper .components-button.is-secondary:hover:not(:disabled) {
+  box-shadow: none;
+}
+.service-res-rangle-control .units-wrapper .components-button.is-primary {
+  background: rgba(0, 0, 0, 0);
+  color: #000;
+}
+.service-res-rangle-control .units-wrapper .components-button.is-primary:hover:not(:disabled) {
+  background: #fff;
+  color: #000;
+}
+.service-res-rangle-control .units-wrapper .components-button.is-primary:focus:not(:disabled) {
+  box-shadow: none;
+}/*# sourceMappingURL=style.css.map */

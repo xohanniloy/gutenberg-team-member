@@ -1,0 +1,27 @@
+.bwdtm-typography-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.bwdtm-typography-wrapper .bwdtm-typography-edit {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 26px;
+}
+.bwdtm-typography-wrapper .bwdtm-typography-edit span {
+  color: #008eff;
+}
+.bwdtm-typography-wrapper #typography-control {
+  font-weight: 500;
+}
+
+.components-popover__content {
+  padding: 20px 15px;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */

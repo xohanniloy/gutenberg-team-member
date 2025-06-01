@@ -1,0 +1,23 @@
+.service-Alignment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.service-Alignment .service-label {
+  margin: 0;
+  font-weight: 500;
+}
+.service-Alignment .service-single-icon {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.service-Alignment .service-single-icon.active {
+  background: #abf5ff;
+}
+.service-Alignment .service-single-icon span {
+  font-size: 17px;
+  height: 17px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,26 @@
+.bwd-tab-panel {
+  margin-top: 20px;
+  background: #f8f8ff;
+}
+.bwd-tab-panel .bwd-tab {
+  width: 100%;
+  background: rgb(235, 246, 244);
+  justify-content: center;
+  border-top: 0;
+  height: 55px;
+  flex-direction: column;
+  gap: 5px;
+  color: #000000;
+}
+.bwd-tab-panel .bwd-tab:hover {
+  color: #0e0e0e;
+}
+.bwd-tab-panel .bwd-tab.active-tab {
+  border-top: 0;
+  background: #716fff;
+  border-bottom: 0;
+  color: #fff;
+}
+.bwd-tab-panel .bwd-tab .components-popover__content {
+  width: 100% !important;
+}/*# sourceMappingURL=style.css.map */

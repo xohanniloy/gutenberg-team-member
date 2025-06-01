@@ -1,0 +1,72 @@
+.service-dimension-control-wrap .service-res-rangle-control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.service-dimension-control-wrap .service-res-rangle-control .components-input-control__backdrop {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.service-dimension-control-wrap .components-range-control__wrapper {
+  display: none;
+}
+.service-dimension-control-wrap .components-base-control {
+  margin-left: 0 !important;
+}
+.service-dimension-control-wrap .service-dimension-label {
+  font-weight: 500;
+}
+.service-dimension-control-wrap .service-dimension-control {
+  display: flex;
+  justify-content: space-between;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls {
+  width: 80%;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls .bwd-single-rangle {
+  display: flex;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls .bwd-single-rangle .components-input-control__backdrop {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls .bwd-single-rangle .components-base-control__field {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls .bwd-single-rangle .components-base-control__field .components-input-control__container {
+  width: 53px;
+}
+.service-dimension-control-wrap .service-dimension-control .bwd-res-controls .components-base-control {
+  width: 27%;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button {
+  height: 32px;
+  padding: 6px 9px;
+  border-color: #00BCD4 !important;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button.is-primary {
+  background: #3f4631;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button.is-primary:hover {
+  background: #3f4631;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button.is-primary:focus {
+  box-shadow: none;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button.is-secondary:focus {
+  border: 1px solid;
+}
+.service-dimension-control-wrap .service-dimension-control .service-dimension-link .components-button span {
+  height: 16px;
+  font-size: 16px;
+}/*# sourceMappingURL=style.css.map */
